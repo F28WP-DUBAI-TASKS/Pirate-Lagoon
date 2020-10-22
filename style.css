@@ -4,8 +4,9 @@
     position: absolute;
     text-align: center;
     top: 50%;
-    left: 35%;
-    font-size: 70px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
 }
 /* #image{
     display: flex;
