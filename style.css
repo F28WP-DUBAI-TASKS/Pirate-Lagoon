@@ -1,19 +1,13 @@
 
-.container{
-    position: absolute;
-    text-align: center;
-    color: black;
-    
-}
+
 #text{
     position: absolute;
-    z-index: 1;
+    text-align: center;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
+    left: 35%;
+    font-size: 70px;
 }
-#image{
+/* #image{
     display: flex;
     justify-content: center;
 }
@@ -22,12 +16,14 @@ img{
     width: 1260px;
     height: 600px;   
     
-}
+} */
 
 body {
         font-family: 'Press Start 2P';
-        font-size: 25px; 
         color: black;
-       
+        background-image: url(BG1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    
     }
 
