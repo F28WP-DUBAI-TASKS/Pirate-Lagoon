@@ -1,6 +1,8 @@
 
 
 #text{
+    font-family: 'Press Start 2P';
+    color: black;
     position: absolute;
     text-align: center;
     top: 50%;
@@ -19,12 +21,14 @@ img{
     
 } */
 
-body {
-        font-family: 'Press Start 2P';
-        color: black;
-        background-image: url(BG1.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
+video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
     
-    }
+   
 
