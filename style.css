@@ -28,12 +28,40 @@ video {
     text-align:right;
 
   }
+
+  #b1 {
+
+    background: #0066A2;
+    color: white;
+    
+    border-style: outset;
+    
+    border-color: #0066A2;
+    
+    height: 45%;
+    
+    width: 4.5%;
+    right: 40%;
+    transform: translateX(1800%);
+    
+    font: bold 15px arial, sans-serif;
+    
+    text-shadow:none;
+    
+    
+    } 
   
 
-    .title{
+    .logo{
       position:absolute;
       margin-left: 1350px;
       margin-top: 10px;
+    }
+
+    .ship{
+      position:absolute;
+      margin-left: -20px;
+      margin-top: 270px;
     }
    
 
