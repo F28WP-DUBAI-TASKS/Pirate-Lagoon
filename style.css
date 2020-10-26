@@ -38,7 +38,12 @@ video {
 
     .ship{
       position:absolute;
-      margin-left: -20px;
+      margin-left: -30px;
+      margin-top: 270px;
+    }
+    .shiprev{
+      position:absolute;
+      margin-left: 890px;
       margin-top: 270px;
     }
 
