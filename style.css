@@ -23,29 +23,31 @@ video {
   .Namebutton{
     position: absolute;
     display:inline-block;
-    width:840px;
-    margin-top:450px;
+    width:65%;
+    margin-top:35%;
     text-align:right;
 
   }
-  .FORM-submit-button {
+  #b1 {
 
     background: #0066A2;
-    
     color: white;
     
     border-style: outset;
     
     border-color: #0066A2;
     
-    height: 50px;
+    height: 45%;
     
-    width: 100px;
+    width: 4.5%;
+    right: 40%;
+    transform: translateX(1800%);
     
     font: bold 15px arial, sans-serif;
     
     text-shadow:none;
     
-    }
+    
+    } 
    
 
