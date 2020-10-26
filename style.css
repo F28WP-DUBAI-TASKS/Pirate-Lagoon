@@ -19,6 +19,33 @@ video {
     top: 0;
     left: 0;
   }
+
+  .Namebutton{
+    position: absolute;
+    display:inline-block;
+    width:840px;
+    margin-top:450px;
+    text-align:right;
+
+  }
+  .FORM-submit-button {
+
+    background: #0066A2;
     
+    color: white;
+    
+    border-style: outset;
+    
+    border-color: #0066A2;
+    
+    height: 50px;
+    
+    width: 100px;
+    
+    font: bold 15px arial, sans-serif;
+    
+    text-shadow:none;
+    
+    }
    
 
