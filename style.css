@@ -23,12 +23,24 @@ video {
   .Namebutton{
     position: absolute;
     display:inline-block;
-    width:840px;
-    margin-top:450px;
+    width:65%;
+    margin-top:35%;
     text-align:right;
 
   }
+  
 
+    .logo{
+      position:absolute;
+      margin-left: 1350px;
+      margin-top: 10px;
+    }
+
+    .ship{
+      position:absolute;
+      margin-left: -20px;
+      margin-top: 270px;
+    }
   #b1 {
 
     background: #0066A2;
@@ -50,18 +62,6 @@ video {
     
     
     } 
-  
 
-    .logo{
-      position:absolute;
-      margin-left: 1350px;
-      margin-top: 10px;
-    }
-
-    .ship{
-      position:absolute;
-      margin-left: -20px;
-      margin-top: 270px;
-    }
    
 
