@@ -61,14 +61,25 @@ video {
     text-shadow:none;
     
     } 
-    
-    #value{
+
+    #buttonimage1{
       position:absolute;
+      margin-top: 600px;
+      margin-left: 480px;
     }
 
-    button{
+    #buttonimage2{
       position:absolute;
+      margin-top: 600px;
+      margin-left: 670px;
     }
+
+    #buttonimage3{
+      position:absolute;
+      margin-top: 600px;
+      margin-left: 850px;
+    }
+    
 
    
 
