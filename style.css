@@ -61,17 +61,14 @@ video {
     text-shadow:none;
     
     } 
-    #jack{
-      width:52px;
-      height:37px;
-      background:url('canon_ball.png') no-repeat;
-      transform: translate(800%, 1250%);
-      background-position:0px 0px;
-      background-size:auto 100%;
-      position: absolute;
-      
+    
+    #value{
+      position:absolute;
+    }
 
-  }
+    button{
+      position:absolute;
+    }
 
    
 
