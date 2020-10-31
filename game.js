@@ -1,7 +1,4 @@
-    function openWindow(){
-//code for opening the window is way down and is not spaced. The spaced/tabbed code here is the tictactoe one.
-      
-      
+
       var player1Score = [];
       var player2Score = [];
       
@@ -136,38 +133,4 @@
   }
 
   
-   function newWindow(){
-     newWindow = window.open("tictactoe.html", "myWindow", "width=500,height=700,status=yes,toolbar=no,menubar=no,location=no"); 
-     newWindow.focus();
-     newWindow.onload = function(){
-      let content = "<button class='btn btn-primary' onclick='window.print();'>Confirm</button>";
-      newWindow.document.getElementById('mainBody').innerHTML = content;
-     } 
-     newWindow.window.close();
-  }
 
-  // Get the modal
-var tictac = document.getElementById("myBox");
-
-// Get the button that opens the modal
-var button = document.getElementById("game1");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-button.onclick = function() {
-  tictac.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  tictac.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == tictac) {
-    tictac.style.display = "none";
-  }
-}
