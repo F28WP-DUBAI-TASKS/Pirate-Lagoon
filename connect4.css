@@ -1,0 +1,31 @@
+* {
+	border: 0;
+	padding: 0;
+}
+
+#game-board {
+	background: #0074B3;
+	width: 730px;
+	cursor: pointer;
+}
+
+.column {
+	width: 100px;
+	display: inline-block;
+}
+
+.column:hover  circle.free{
+	fill: #D5E4ED;
+}
+
+circle.free {
+	fill: #fff;
+}
+
+circle.red {
+	fill: #D50000;
+}
+
+circle.yellow {
+	fill: #DAD400;
+}
