@@ -136,14 +136,15 @@
   }
 
   
-   {
-     var newWindow = window.open("tictactoe.html", null, "width=500,height=700,status=yes,toolbar=no,menubar=no,location=no"); 
+   function{
+     newWindow = window.open("tictactoe.html", "myWindow", "width=500,height=700,status=yes,toolbar=no,menubar=no,location=no"); 
+     newWindow.focus();
      newWindow.onload = function(){
       let content = "<button class='btn btn-primary' onclick='window.print();'>Confirm</button>";
-    newWindow.document.getElementById('mainBody').innerHTML = content;
+      newWindow.document.getElementById('mainBody').innerHTML = content;
      } 
      newWindow.window.close();
-  }}
+  }
 
   // Get the modal
 var tictac = document.getElementById("myBox");

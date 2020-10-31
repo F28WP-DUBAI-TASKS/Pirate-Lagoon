@@ -132,3 +132,7 @@ color: #000;
 text-decoration: none;
 cursor: pointer;
 }
+
+#mainBody{
+  position:absolute;
+}
