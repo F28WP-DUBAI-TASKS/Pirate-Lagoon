@@ -90,12 +90,13 @@ transform: translate(25%, 60%); */
 position:absolute;
     margin-top: 600px;
     margin-left: 480px;
+    background-color: transparent;
 
 }
 /* The Modal (background) */
 .gameOption1 {
 display: none; /* Hidden by default */
-position:  relative; /* Stay in place */
+position:  absolute; /* Stay in place */
 z-index: 1; /* Sit on top */
 padding-top: 100px; /* Location of the box */
 left: 0;

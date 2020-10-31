@@ -137,12 +137,11 @@
 
   
    {
-      newWindow = window.open("tictactoe.html", null, "width=500,height=700,status=yes,toolbar=no,menubar=no,location=no"); 
-      newWindow.onload = function(){
-          let content = "<button class='btn btn-primary' onclick='window.print();'>Confirm</button>";
-        newWindow.document.getElementById('mainBody').innerHTML = content;
-         } 
-     
+     var newWindow = window.open("tictactoe.html", null, "width=500,height=700,status=yes,toolbar=no,menubar=no,location=no"); 
+     newWindow.onload = function(){
+      let content = "<button class='btn btn-primary' onclick='window.print();'>Confirm</button>";
+    newWindow.document.getElementById('mainBody').innerHTML = content;
+     } 
      newWindow.window.close();
   }}
 
