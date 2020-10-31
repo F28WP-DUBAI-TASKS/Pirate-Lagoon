@@ -136,7 +136,7 @@
   }
 
   
-   function{
+   function newWindow(){
      newWindow = window.open("tictactoe.html", "myWindow", "width=500,height=700,status=yes,toolbar=no,menubar=no,location=no"); 
      newWindow.focus();
      newWindow.onload = function(){
