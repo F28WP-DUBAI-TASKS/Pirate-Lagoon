@@ -11,10 +11,12 @@
 
  <body>
      
+
+<div id="play_area">
     <video playsinline autoplay muted loop poster="BG1.jpg" id="bgvid">
-        <source src="gifbg.mov" type="video/mov">
-        <source src="gifbg.mp4" type="video/mp4">
+    <source src="gifbg.mp4" type="video/mp4">
     </video>
+    
 
     <div class="logo">
         <img src="gamelogo.png" alt="logo">
@@ -27,16 +29,39 @@
         <img src="shiprev.png" alt="ship">
     </div>
     
-    
-    <input type="image" id="buttonimage1" alt="game1"
-    src="canon.png" onclick="openWindow();">
+<div class = "gameSelection">
+<!-- Trigger/Open The Modal -->
+<button id="game1" >
+   <img id="buttonimage1" alt="game1" src="canon.png">
+
+
+</button>
+
+<!-- The Modal -->
+<div id="myBox" class="gameOption1">
+
+  <!-- Modal content -->
+  <div class="games">
+    <span class="close">&times;</span>
+    <p>tictactoe</p>
+  </div>
+
+</div>
+
+
+</div>
 
     <input type="image" id="buttonimage2" alt="game2"
     src="canon.png" onclick="openWindow();">
 
     <input type="image" id="buttonimage3" alt="game3"
     src="canon.png" onclick="openWindow();">
-    
+    </div>
+
+
+
+
+
 
 </body>
 

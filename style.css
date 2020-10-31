@@ -1,24 +1,45 @@
 
 
 #text{
-    font-family: 'Press Start 2P';
-    color: black;
-    position: absolute;
-    text-align: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 30px;
+  font-family: 'Press Start 2P';
+  color: black;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
 }
 
-video {
-    object-fit: cover;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
+
+
+#bgvid{
+object-fit: fill;
+position:fixed;
+width:100%; 
+height:100;
+top:0;
+left:0;
+
+}
+
+  .logo{
+    position:absolute;
+    margin-left: 1350px;
+    margin-top: 10px;
   }
+
+  .ship{
+    position:absolute;
+    margin-left: -30px;
+    margin-top: 200px;
+  }
+  .shiprev{
+    position:absolute;
+    margin-left: 890px;
+    margin-top: 200px;
+  }
+
 
   .Namebutton{
     position: absolute;
@@ -26,60 +47,87 @@ video {
     width:65%;
     margin-top:35%;
     text-align:right;
-
   }
+#b1 {
+
+  background: #0066A2;
+  color: white;
+  border-style: outset;
+  border-color: #0066A2;
+  height: 45%;
+  width: 4.5%;
+  right: 40%;
+  transform: translateX(1800%);
+  font: bold 15px arial, sans-serif;
+  text-shadow:none;
   
+  } 
 
-    .logo{
-      position:absolute;
-      margin-left: 1350px;
-      margin-top: 10px;
-    }
+/*    #buttonimage1{
+    position:absolute;
+    margin-top: 600px;
+    margin-left: 480px;
+  }*/
 
-    .ship{
-      position:absolute;
-      margin-left: -30px;
-      margin-top: 270px;
-    }
-    .shiprev{
-      position:absolute;
-      margin-left: 890px;
-      margin-top: 270px;
-    }
+  #buttonimage2{
+    position:absolute;
+    margin-top: 600px;
+    margin-left: 670px;
+  }
 
-  #b1 {
+  #buttonimage3{
+    position:absolute;
+    margin-top: 600px;
+    margin-left: 850px;
+  
+}
+ 
+/* Popup box BEGIN */
 
-    background: #0066A2;
-    color: white;
-    border-style: outset;
-    border-color: #0066A2;
-    height: 45%;
-    width: 4.5%;
-    right: 40%;
-    transform: translateX(1800%);
-    font: bold 15px arial, sans-serif;
-    text-shadow:none;
-    
-    } 
+#game1 {
+/* margin-top: 35%; 
+transform: translate(25%, 60%); */
+position:absolute;
+    margin-top: 600px;
+    margin-left: 480px;
 
-    #buttonimage1{
-      position:absolute;
-      margin-top: 600px;
-      margin-left: 480px;
-    }
+}
+/* The Modal (background) */
+.gameOption1 {
+display: none; /* Hidden by default */
+position:  relative; /* Stay in place */
+z-index: 1; /* Sit on top */
+padding-top: 100px; /* Location of the box */
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
 
-    #buttonimage2{
-      position:absolute;
-      margin-top: 600px;
-      margin-left: 670px;
-    }
+/* Modal Content */
+.games {
+background-color: #fefefe;
+margin: auto;
+padding: 20px;
+border: 1px solid #888;
+width: 50%;
 
-    #buttonimage3{
-      position:absolute;
-      margin-top: 600px;
-      margin-left: 850px;
-    }
-    
+}
 
-   
+/* The Close Button */
+.close {
+color: #aaaaaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+}
 
+.close:hover,
+.close:focus {
+color: #000;
+text-decoration: none;
+cursor: pointer;
+}
