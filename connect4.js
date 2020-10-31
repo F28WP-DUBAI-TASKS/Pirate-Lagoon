@@ -1,4 +1,3 @@
-
 while (!player1){
     var player1 = prompt('Player One: Enter your name. You will be red.');
 };
@@ -149,5 +148,3 @@ resetBtn.addEventListener('click', () => {
     playerTurn.style.color = 'black';
     return (currentPlayer === 1 ? playerTurn.textContent = `${player1}'s turn` : playerTurn.textContent = `${player2}'s turn`);
 });
-=======
->>>>>>> 33d0740979c88bc5fca3d1f6b2ad88e34cfbd29f
