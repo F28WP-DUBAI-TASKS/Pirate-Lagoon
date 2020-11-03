@@ -3,16 +3,17 @@
 <head> 
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="index.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    
+
  </head>
 
  <body>
      
 
-<div id="play_area">
+
     <video playsinline autoplay muted loop poster="BG1.jpg" id="bgvid">
     <source src="gifbg.mp4" type="video/mp4">
     </video>
@@ -29,7 +30,7 @@
         <img src="shiprev.png" alt="ship">
     </div>
     
-    <a href = "connect4.html">
+    <!-- <a href = "connect4.html">
         <img src="canon.png" 
      image id="buttonimage1" alt="game2">
     </a> 
@@ -40,11 +41,87 @@
    
     <a href = "connect4.html">
         <img src="canon.png" image id="buttonimage3" alt="game3">
+    </a> -->
+      
+        <div id = "button">
+    <a class="trigger_popup_fricc">
+        <img id = "canongame1" src = "canon.png">
     </a>
+
+<div class="hover_bkgr_fricc">
+    <span class="helper"></span>
+    <div>
+        <div class="popupCloseButton">&times;</div>
+        <h1>Connect Four</h1>
+
+    <h3 class="player-turn"></h3>
+
+    <div class="container">
+
+    <table>
+        <tr>
+            <td class="slot"></td>
+            <td class="slot"></td>
+            <td class="slot"></td>
+            <td class="slot"></td>
+            <td class="slot"></td>
+            <td class="slot"></td>
+            <td class="slot"></td>
+        </tr>
+        <tr>
+            <td class="slot"></td>
+            <td class="slot"></td>
+            <td class="slot"></td>
+            <td class="slot"></td>
+            <td class="slot"></td>
+            <td class="slot"></td>
+            <td class="slot"></td>
+        </tr>
+        <tr>
+            <td class="slot"></td>
+            <td class="slot"></td>
+            <td class="slot"></td>
+            <td class="slot"></td>
+            <td class="slot"></td>
+            <td class="slot"></td>
+            <td class="slot"></td>
+        </tr>
+        <tr>
+            <td class="slot"></td>
+            <td class="slot"></td>
+            <td class="slot"></td>
+            <td class="slot"></td>
+            <td class="slot"></td>
+            <td class="slot"></td>
+            <td class="slot"></td>
+        </tr>
+        <tr>
+            <td class="slot"></td>
+            <td class="slot"></td>
+            <td class="slot"></td>
+            <td class="slot"></td>
+            <td class="slot"></td>
+            <td class="slot"></td>
+            <td class="slot"></td>
+        </tr>
+        <tr>
+            <td class="slot"></td>
+            <td class="slot"></td>
+            <td class="slot"></td>
+            <td class="slot"></td>
+            <td class="slot"></td>
+            <td class="slot"></td>
+            <td class="slot"></td>
+        </tr>
         
+</div>
 
+<div class="reset">Reset</div>
+<script src="connect4.js"></script>
     </div>
-
+</div>
+    </div>
+</div>
 </body>
 
 </html>
