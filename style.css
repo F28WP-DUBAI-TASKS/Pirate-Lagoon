@@ -10,42 +10,42 @@
 }
 
 
-
 #bgvid{
 object-fit: fill;
 position:fixed;
 width:100%; 
-height:100;
-top:0;
-left:0;
+height:100%;
+top: 0;
+left: 0;
 
 }
 
-  .logo{
-    position:absolute;
-    margin-left: 1350px;
-    margin-top: 10px;
-  }
+.logo{
+  position:fixed;
+  margin-left: 1350px;
+  margin-top: 10px;
+  top: 0;
+}
 
-  .ship{
-    position:absolute;
-    margin-left: -30px;
-    margin-top: 200px;
-  }
-  .shiprev{
-    position:absolute;
-    margin-left: 890px;
-    margin-top: 200px;
-  }
+.ship{
+  position:fixed;
+  margin-left: -30px;
+  margin-top: 200px;
+}
+.shiprev{
+  position:fixed;
+  margin-left: 890px;
+  margin-top: 200px;
+}
 
 
-  .Namebutton{
-    position: absolute;
-    display:inline-block;
-    width:65%;
-    margin-top:35%;
-    text-align:right;
-  }
+.Namebutton{
+  position: absolute;
+  display:inline-block;
+  width:65%;
+  margin-top:35%;
+  text-align:right;
+}
 #b1 {
 
   background: #0066A2;
@@ -61,7 +61,7 @@ left:0;
   
   } 
 
-   #buttonimage1{
+   /* #buttonimage1{
     position:absolute;
     margin-top: 600px;
     margin-left: 480px;
@@ -80,9 +80,9 @@ left:0;
     margin-left: 850px;
   
 }
- 
-.hover_bkgr_fricc{
-  background-color: transparent;
+  */
+.bkgd{
+  
   cursor:pointer;
   display:none;
   height:100%;
@@ -92,17 +92,17 @@ left:0;
   width:100%;
   z-index:1000;
 }
-.hover_bkgr_fricc .helper{
+/* .bkgd .helper{
   display:inline-block;
   height:100%;
   vertical-align:middle;
-}
-.hover_bkgr_fricc > div {
+} */
+.bkgd > div {
   background-color: #fff;
   box-shadow: 10px 10px 60px #555;
   display: inline-block;
   height: auto;
-  max-width: 551px;
+  max-width: 500px;
   min-height: 100px;
   vertical-align: middle;
   width: auto;
@@ -117,8 +117,8 @@ left:0;
   cursor: pointer;
   display: inline-block;
   position: absolute;
-  top: -20px;
-  right: -20px;
+  top: -9px;
+  right: -15px;
   font-size: 25px;
   line-height: 30px;
   width: 30px;
@@ -128,11 +128,12 @@ left:0;
 .popupCloseButton:hover {
   background-color: #ccc;
 }
-.trigger_popup_fricc {
+.popup_trigger {
   cursor: pointer;
-  font-size: 20px;
+  height: 40px;
+  width: 40px;
   margin: 20px;
-  display: inline-block;
+  
   font-weight: bold;
 }
 
@@ -141,32 +142,33 @@ left:0;
 #canongame1{
   position: absolute;
   z-index: 1100;
-  margin-top: 600px;
-  margin-left: 480px;
+  margin-top: 430px;
+  margin-left: -500px;
   
 }
 
 *{
-  margin: 0;
+  margin-top: 18;
+  margin-bottom: 2px;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Luckiest Guy';
+  font-family: 'Press Start 2P';
   text-align: center;
-  margin-top: 0.5rem;
+   /* margin-top: 0rem;  */
  
 }
 
 h1{
-  font-size: 3rem;
+  font-size: 40px;
 }
 
 h3{
-  font-size: 2rem;
+  font-size: 15px;
 }
 
 a{
   position: absolute;
-  top:6rem;
+  top: 6rem;
   font-size: 2rem;
   left: 50%;
   transform: translate(-50%);
@@ -177,10 +179,8 @@ a:hover{
   opacity: 0.7;
 }
 
-
-
-body {
-  background-color: #dcdcdc;
+body{
+  background-color: #0e61af;
 }
 
 .container{
@@ -189,7 +189,7 @@ body {
   transform: translate(-50%);
   width: 600px;
   height: 520px;
-  top: 9rem;
+  top: 12rem;
   background: rgb(87, 168, 255);
   border: 2px solid black;
   padding: .5rem;

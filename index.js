@@ -1,13 +1,13 @@
 $(window).load(function () 
 {
-    $(".trigger_popup_fricc").click(function(){
-       $('.hover_bkgr_fricc').show();
+    $(".popup_trigger").click(function(){
+       $('.bkgd').show();
     });
-    // $('.hover_bkgr_fricc').click(function(){
-    //     $('.hover_bkgr_fricc').hide();
+    // $('.bkgd').click(function(){
+    //     $('.bkgd').hide();
     // });
     $('.popupCloseButton').click(function(){
-        $('.hover_bkgr_fricc').hide();
+        $('.bkgd').hide();
     });
     
 while (!player1){
