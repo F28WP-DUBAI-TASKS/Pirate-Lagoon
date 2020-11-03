@@ -357,11 +357,12 @@ html, #ppbg{
   position: absolute;
   left: 50%;
   transform: translate(-50%);
+  background-image: url("blurred.png") ;
   width: 1600px;
   height: 500px;
   top: 10rem;
 
-  background-image: url(BG1.png);
+  
   
   padding: .5rem;
  
