@@ -190,7 +190,7 @@ body{
   width: 600px;
   height: 520px;
   top: 12rem;
-  background: rgb(87, 168, 255);
+  /* background: rgb(87, 168, 255); */
   border: 2px solid black;
   padding: .5rem;
   box-shadow: 5px 10px #888888;
@@ -308,11 +308,15 @@ box-shadow: 0px 0px #888888;
   margin-left: 50px;
   
 }
+html, #ppbg{
+  margin:0;
+  padding: 0;
+}
 #ppbg{
   overflow: hidden;
   background-color: black;
-  margin:0;
-  padding: 0;
+ 
+
 }
 
 #left{
@@ -321,6 +325,7 @@ box-shadow: 0px 0px #888888;
    height: 200px;
    background-color: white;
    float: left;
+   overflow-y: hidden;
 }
 
 #right{
@@ -329,6 +334,8 @@ box-shadow: 0px 0px #888888;
    height: 200px;
    background-color: white;    
    float: right;
+   overflow-y: hidden;
+   
 }
 
 #ball{
@@ -340,13 +347,24 @@ box-shadow: 0px 0px #888888;
 }
 
 #deli,#scoreleft,#scoreright{
-   font-size: 1000%;
+   font-size: 200%;
    color: white;
    z-index: 10;
 }
 
-#goal{
-   font-size: 1000%;
-   transition: 1.5s all;
-   display: inline-block;
+
+.container1{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  width: 1600px;
+  height: 500px;
+  top: 10rem;
+
+  background-image: url(BG1.png);
+  
+  padding: .5rem;
+ 
+
 }
+

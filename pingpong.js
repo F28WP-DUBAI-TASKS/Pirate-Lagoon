@@ -110,7 +110,7 @@ function moveball() {
 
 
 
-    //remove overflow x in left ir get the goal in left
+    //remove overflow x in left or get the goal in left
     if (nfp(b.style.left) <= 30) {
         if (nfp(l.style.top) <= nfp(b.style.top) + 20 && nfp(l.style.top) + 200 >= nfp(b.style.top)) {
             speedx *= -1;
