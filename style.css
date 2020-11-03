@@ -67,6 +67,7 @@ left:0;
     position:absolute;
     margin-top: 600px;
     margin-left: 480px;
+
   }
 
   #buttonimage2{
@@ -143,6 +144,7 @@ left:0;
   position: absolute;
   z-index: 1100;
   transform: translate(100%, 500%);
+  
 }
 
 *{

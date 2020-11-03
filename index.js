@@ -1,4 +1,5 @@
-$(window).load(function () {
+$(window).load(function () 
+{
     $(".trigger_popup_fricc").click(function(){
        $('.hover_bkgr_fricc').show();
     });
@@ -8,7 +9,14 @@ $(window).load(function () {
     $('.popupCloseButton').click(function(){
         $('.hover_bkgr_fricc').hide();
     });
-});
+
+    // $('.trigger_popup_fricc').on('click', function () {
+    //     $(this.hash).toggleClass('active').focus();
+    //   });
+      
+    //   $('button').on('focusout', function () {
+    //     $(this).removeClass('active');
+    //   });
 
 while (!player1){
     var player1 = prompt('Player One: Enter your name. You will be red.');
@@ -159,4 +167,6 @@ resetBtn.addEventListener('click', () => {
     });
     playerTurn.style.color = 'black';
     return (currentPlayer === 1 ? playerTurn.textContent = `${player1}'s turn` : playerTurn.textContent = `${player2}'s turn`);
+});
+
 });
