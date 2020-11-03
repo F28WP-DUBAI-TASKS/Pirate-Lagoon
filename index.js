@@ -3,21 +3,13 @@ $(window).load(function ()
     $(".trigger_popup_fricc").click(function(){
        $('.hover_bkgr_fricc').show();
     });
-    $('.hover_bkgr_fricc').click(function(){
-        $('.hover_bkgr_fricc').hide();
-    });
+    // $('.hover_bkgr_fricc').click(function(){
+    //     $('.hover_bkgr_fricc').hide();
+    // });
     $('.popupCloseButton').click(function(){
         $('.hover_bkgr_fricc').hide();
     });
-
-    // $('.trigger_popup_fricc').on('click', function () {
-    //     $(this.hash).toggleClass('active').focus();
-    //   });
-      
-    //   $('button').on('focusout', function () {
-    //     $(this).removeClass('active');
-    //   });
-
+    
 while (!player1){
     var player1 = prompt('Player One: Enter your name. You will be red.');
 };

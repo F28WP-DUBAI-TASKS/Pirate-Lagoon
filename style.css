@@ -143,7 +143,8 @@ left:0;
 #canongame1{
   position: absolute;
   z-index: 1100;
-  transform: translate(100%, 500%);
+  margin-top: 600px;
+  margin-left: 480px;
   
 }
 
