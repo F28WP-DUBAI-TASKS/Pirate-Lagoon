@@ -140,7 +140,6 @@ function diagonalCheck2(){
         }
     }
 }
-
 function drawCheck(){
     let fullSlot = []
     for (i=0; i < tableData.length; i++){
