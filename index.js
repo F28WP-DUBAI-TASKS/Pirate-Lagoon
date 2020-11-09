@@ -152,7 +152,6 @@ function drawCheck(){
         return true;
     }
 }
-
 resetBtn.addEventListener('click', () => {
     slots.forEach(slot => {
         slot.style.backgroundColor = 'white';
