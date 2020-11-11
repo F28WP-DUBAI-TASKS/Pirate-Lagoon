@@ -1,0 +1,27 @@
+{
+  "name": "WP-Coursework-",
+  "version": "1.0.0",
+  "description": "WP GAME Battle TBD / Cannon Water/ Pirates/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/F28WP-DUBAI-TASKS/WP-Coursework-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/F28WP-DUBAI-TASKS/WP-Coursework-/issues"
+  },
+  "homepage": "https://github.com/F28WP-DUBAI-TASKS/WP-Coursework-#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mysql": "^2.18.1",
+    "pug": "^3.0.0"
+  }
+}
