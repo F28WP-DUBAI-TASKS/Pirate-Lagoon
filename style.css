@@ -20,21 +20,21 @@
 
 .titlepic {
     position: fixed;
-    margin-left: 500px;
-    margin-top: 100px;
+    margin-left: 510px;
+    margin-top: 0.5px;
     top: 0;
 }
 
 .ship {
     position: fixed;
     margin-left: -30px;
-    margin-top: 200px;
+    margin-top: 205px;
 }
 
 .shiprev {
     position: fixed;
-    margin-left: 890px;
-    margin-top: 200px;
+    margin-left: 900px;
+    margin-top: 205px;
 }
 
 .Namebutton {
@@ -78,7 +78,7 @@
 
 .bkgd>div {
     background-color: #fff;
-    box-shadow: 10px 10px 60px #555;
+    /*box-shadow: 10px 10px 60px #555;*/
     display: inline-block;
     height: auto;
     max-width: 500px;
@@ -166,11 +166,10 @@ body {
     transform: translate(-50%);
     width: 600px;
     height: 520px;
-    top: 12rem;
-    /* background: rgb(87, 168, 255); */
-    border: 2px solid black;
+    top: 10.5rem;
+    /*background: rgba(10, 10, 10, 0.918);*/
+    /*border: 1px solid rgb(4, 11, 107);*/
     padding: .5rem;
-    box-shadow: 5px 10px #888888;
 }
 
 .container table tr td {
@@ -184,7 +183,7 @@ body {
 
 .reset {
     position: absolute;
-    top: 32rem;
+    top: 31.5rem;
     left: 50%;
     transform: translate(-50%);
     width: 100px;
@@ -194,7 +193,6 @@ body {
     border: 1px solid black;
     background: #ffffff;
     cursor: pointer;
-    box-shadow: 6px 5px #888888;
     transition: .5s;
 }
 
@@ -239,7 +237,6 @@ body {
 
 .bkgd1>div {
     background-color: #fff;
-    box-shadow: 10px 10px 60px #555;
     display: inline-block;
     height: auto;
     max-width: 500px;
