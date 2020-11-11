@@ -1,371 +1,343 @@
-#text{
-  font-family: 'Press Start 2P';
-  color: black;
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 30px;
+#text {
+    font-family: 'Press Start 2P';
+    color: black;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
 }
 
-
-#bgvid{
-object-fit: fill;
-position:fixed;
-width:100%; 
-height:100%;
-top: 0;
-left: 0;
-
+#bgvid {
+    object-fit: fill;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
 }
 
-.titlepic{
-  position:fixed;
-  margin-left: 500px;
-  margin-top: 100px;
-  top: 0;
+.titlepic {
+    position: fixed;
+    margin-left: 500px;
+    margin-top: 100px;
+    top: 0;
 }
 
-.ship{
-  position:fixed;
-  margin-left: -30px;
-  margin-top: 200px;
-}
-.shiprev{
-  position:fixed;
-  margin-left: 890px;
-  margin-top: 200px;
+.ship {
+    position: fixed;
+    margin-left: -30px;
+    margin-top: 200px;
 }
 
-
-.Namebutton{
-  position: absolute;
-  display:inline-block;
-  width:65%;
-  margin-top:35%;
-  text-align:right;
+.shiprev {
+    position: fixed;
+    margin-left: 890px;
+    margin-top: 200px;
 }
+
+.Namebutton {
+    position: absolute;
+    display: inline-block;
+    width: 65%;
+    margin-top: 35%;
+    text-align: right;
+}
+
 #b1 {
-
-  background: #0066A2;
-  color: white;
-  border-style: outset;
-  border-color: #0066A2;
-  height: 45%;
-  width: 4.5%;
-  right: 40%;
-  transform: translateX(1800%);
-  font: bold 15px arial, sans-serif;
-  text-shadow:none;
-  
-  } 
-
-   /* #buttonimage1{
-    position:absolute;
-    margin-top: 600px;
-    margin-left: 480px;
-
-  }
-
-  #buttonimage2{
-    position:absolute;
-    margin-top: 600px;
-    margin-left: 670px;
-  }
-
-  #buttonimage3{
-    position:absolute;
-    margin-top: 600px;
-    margin-left: 850px;
-  
+    background: #0066A2;
+    color: white;
+    border-style: outset;
+    border-color: #0066A2;
+    height: 45%;
+    width: 4.5%;
+    right: 40%;
+    transform: translateX(1800%);
+    font: bold 15px arial, sans-serif;
+    text-shadow: none;
 }
-  */
-.bkgd{
-  
-  cursor:pointer;
-  display:none;
-  height:100%;
-  position:relative;
-  text-align:center;
-  top:0;
-  width:100%;
-  z-index:1000;
+
+.bkgd {
+    cursor: pointer;
+    display: none;
+    height: 100%;
+    position: relative;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
+
+
 /* .bkgd .helper{
   display:inline-block;
   height:100%;
   vertical-align:middle;
 } */
-.bkgd > div {
-  background-color: #fff;
-  box-shadow: 10px 10px 60px #555;
-  display: inline-block;
-  height: auto;
-  max-width: 500px;
-  min-height: 100px;
-  vertical-align: middle;
-  width: auto;
-  position: relative;
-  border-radius: 8px;
-  padding: 15px 5%;
+
+.bkgd>div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 500px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: auto;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
 }
+
 .popupCloseButton {
-  background-color: #fff;
-  border: 3px solid #999;
-  border-radius: 50px;
-  cursor: pointer;
-  display: inline-block;
-  position: absolute;
-  top: -9px;
-  right: -15px;
-  font-size: 25px;
-  line-height: 30px;
-  width: 30px;
-  height: 30px;
-  text-align: center;
+    background-color: #fff;
+    border: 3px solid #999;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    position: absolute;
+    top: -9px;
+    right: -15px;
+    font-size: 25px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
 }
+
 .popupCloseButton:hover {
-  background-color: #ccc;
+    background-color: #ccc;
 }
+
 .popup_trigger {
-  cursor: pointer;
-  height: 40px;
-  width: 40px;
-  margin: 20px;
-  
-  font-weight: bold;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    margin: 20px;
+    font-weight: bold;
 }
 
-
-
-#canongame1{
-  position: absolute;
-  z-index: 1100;
-  margin-top: 410px;
-  margin-left: -300px;
-  
+#canongame1 {
+    position: absolute;
+    z-index: 1100;
+    margin-top: 410px;
+    margin-left: -300px;
 }
 
-*{
-  margin-top: 18;
-  margin-bottom: 2px;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Press Start 2P';
-  text-align: center;
-   /* margin-top: 0rem;  */
- 
+* {
+    margin-top: 18;
+    margin-bottom: 2px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P';
+    text-align: center;
+    /* margin-top: 0rem;  */
 }
 
-h1{
-  font-size: 40px;
+h1 {
+    font-size: 40px;
 }
 
-h3{
-  font-size: 15px;
+h3 {
+    font-size: 15px;
 }
 
-a{
-  position: absolute;
-  top: 6rem;
-  font-size: 2rem;
-  left: 50%;
-  transform: translate(-50%);
-  color: black;
+a {
+    position: absolute;
+    top: 6rem;
+    font-size: 2rem;
+    left: 50%;
+    transform: translate(-50%);
+    color: black;
 }
 
-a:hover{
-  opacity: 0.7;
+a:hover {
+    opacity: 0.7;
 }
 
-body{
-  background-color: #0e61af;
+body {
+    background-color: #0e61af;
 }
 
-.container{
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-  width: 600px;
-  height: 520px;
-  top: 12rem;
-  /* background: rgb(87, 168, 255); */
-  border: 2px solid black;
-  padding: .5rem;
-  box-shadow: 5px 10px #888888;
-
+.container {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 600px;
+    height: 520px;
+    top: 12rem;
+    /* background: rgb(87, 168, 255); */
+    border: 2px solid black;
+    padding: .5rem;
+    box-shadow: 5px 10px #888888;
 }
 
-.container table tr td{
-  width: 90px;
-  height: 80px;
-  border: 2px solid black;
-  border-radius: 50%;
-  background-color: white;
-  cursor: pointer;
+.container table tr td {
+    width: 90px;
+    height: 80px;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
 }
 
-
-.reset{
-  position: absolute;
-  top:32rem;
-  left: 50%;
-  transform: translate(-50%);
-  width: 100px;
-  height: 30px;
-  text-align: center;
-  padding: 0.3rem;
-  border: 1px solid black;
-  background: #ffffff;
-  cursor: pointer;
-  box-shadow: 6px 5px #888888;
-  transition: .5s;
+.reset {
+    position: absolute;
+    top: 32rem;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    padding: 0.3rem;
+    border: 1px solid black;
+    background: #ffffff;
+    cursor: pointer;
+    box-shadow: 6px 5px #888888;
+    transition: .5s;
 }
 
-.reset:hover{
-transition: 0.8s;
-box-shadow: 0px 0px #888888;
+.reset:hover {
+    transition: 0.8s;
+    box-shadow: 0px 0px #888888;
 }
 
-@media screen and (max-width: 600px){
-  .container{
-      position: absolute;
-      left: 50%;
-      transform: translate(-50%);
-      width: 90%;
-      height: 520px;
-      top: 9rem;
-      border: 2px solid black;
-      padding: .5rem;
-  
-  }
-  
+@media screen and (max-width: 600px) {
+    .container {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        width: 90%;
+        height: 520px;
+        top: 9rem;
+        border: 2px solid black;
+        padding: .5rem;
+    }
 }
+
 
 /* >>>>>>>>>>>>>>css of ping pong>>>>>>>>>>> */
 
-.bkgd1{
-  
-  cursor:pointer;
-  display:none;
-  height:100%;
-  position:relative;
-  text-align:center;
-  top:0;
-  width:100%;
-  z-index:1000;
+.bkgd1 {
+    cursor: pointer;
+    display: none;
+    height: 100%;
+    position: relative;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
+
+
 /* .bkgd .helper{
   display:inline-block;
   height:100%;
   vertical-align:middle;
 } */
-.bkgd1 > div {
-  background-color: #fff;
-  box-shadow: 10px 10px 60px #555;
-  display: inline-block;
-  height: auto;
-  max-width: 500px;
-  min-height: 100px;
-  vertical-align: middle;
-  width: auto;
-  position: relative;
-  border-radius: 8px;
-  padding: 15px 5%;
+
+.bkgd1>div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 500px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: auto;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
 }
+
 .popupCloseButton1 {
-  background-color: #fff;
-  border: 3px solid #999;
-  border-radius: 50px;
-  cursor: pointer;
-  display: inline-block;
-  position: absolute;
-  top: -9px;
-  right: -15px;
-  font-size: 25px;
-  line-height: 30px;
-  width: 30px;
-  height: 30px;
-  text-align: center;
+    background-color: #fff;
+    border: 3px solid #999;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    position: absolute;
+    top: -9px;
+    right: -15px;
+    font-size: 25px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
 }
+
 .popupCloseButton1:hover {
-  background-color: #ccc;
+    background-color: #ccc;
 }
+
 .popup_trigger1 {
-  cursor: pointer;
-  height: 40px;
-  width: 40px;
-  margin: 20px;
-  
-  font-weight: bold;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    margin: 20px;
+    font-weight: bold;
 }
 
-#canongame2{
-  position: absolute;
-  z-index: 1100;
-  margin-top: 410px;
-  margin-left: 50px;
-  
-}
-html, #ppbg{
-  margin:0;
-  padding: 0;
-}
-#ppbg{
-  overflow: hidden;
-  background-color: black;
- 
-
+#canongame2 {
+    position: absolute;
+    z-index: 1100;
+    margin-top: 410px;
+    margin-left: 50px;
 }
 
-#left{
-   position: relative;
-   width: 30px;
-   height: 200px;
-   background-color: white;
-   float: left;
-   overflow-y: hidden;
+html,
+#ppbg {
+    margin: 0;
+    padding: 0;
 }
 
-#right{
-   position: relative;
-   width: 30px;
-   height: 200px;
-   background-color: white;    
-   float: right;
-   overflow-y: hidden;
-   
+#ppbg {
+    overflow: hidden;
+    background-color: black;
 }
 
-#ball{
-   position: absolute;
-   width: 20px;
-   height: 20px;
-   background-color:white;
-   border-radius: 50%;
+#left {
+    position: relative;
+    width: 30px;
+    height: 200px;
+    background-color: white;
+    float: left;
+    overflow-y: hidden;
 }
 
-#deli,#scoreleft,#scoreright{
-   font-size: 200%;
-   color: white;
-   z-index: 10;
+#right {
+    position: relative;
+    width: 30px;
+    height: 200px;
+    background-color: white;
+    float: right;
+    overflow-y: hidden;
 }
 
-
-.container1{
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-  background-image: url("blurred.png") ;
-  width: 1600px;
-  height: 500px;
-  top: 10rem;
-
-  
-  
-  padding: .5rem;
- 
-
+#ball {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
 }
 
+#deli,
+#scoreleft,
+#scoreright {
+    font-size: 200%;
+    color: white;
+    z-index: 10;
+}
+
+.container1 {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    background-image: url("blurred.png");
+    width: 1600px;
+    height: 500px;
+    top: 10rem;
+    padding: .5rem;
+}
