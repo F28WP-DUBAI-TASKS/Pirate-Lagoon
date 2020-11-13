@@ -3,6 +3,9 @@ var express = require('express');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var path = require('path');
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
+var socket = io('http://localhost:80');
 
 var connection = mysql.createConnection({
 	host     : 'localhost',
