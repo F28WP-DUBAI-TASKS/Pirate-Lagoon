@@ -8,7 +8,7 @@ Game Scenario: The Pirates are trying to conquer lost lands and hidden treasures
 
 Game Steps: Step 1: 2 Players enter the game and register unique identifying names for their characters.
             Step 2: The Players will compete by playing a series of 2 mini games to decide the ultimate winner.
-            Step 3: Game 1 - Connect 4 
-            Step 4: Game 2 - Ping Pong 
+            Step 3: Game 1 -: Connect 4 
+            Step 4: Game 2 -: Ping Pong 
             Step 5: The scores of both the games will be computed and the pirate with the highest score is declared, 'The Champion of The Lands Uninhabited'.
 
