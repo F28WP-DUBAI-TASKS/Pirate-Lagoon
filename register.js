@@ -7,6 +7,7 @@ var path = require('path');
 var server = require('http').createServer(app);
 const pageRouter = require('./routes/pages');
 var io = require('socket.io')(server);
+var app = express();
 
 // for body parser. to collect data that sent from the client.
 app.use(express.urlencoded( { extended : false}));
@@ -18,7 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 var connection = mysql.createConnection({
 	host     : 'localhost',
 	user     : 'root',
-	password : 'abc123',
+	password : 'kulsoom',
 	database : 'logindata',
 	insecureAuth : true
 });
