@@ -7,6 +7,7 @@ var path = require('path');
 var server = require('http').createServer(app);
 const pageRouter = require('./routes/pages');
 var io = require('socket.io')(server);
+var app = express();
 
 /**
  * Connection to the database.
@@ -14,8 +15,8 @@ var io = require('socket.io')(server);
 const pool = mysql.createPool({
     connectionLimit: 10,
     host: 'localhost',
-    user: 'Your database username', // use your mysql username.
-    password: 'Your database password', // user your mysql password.
+    user: 'root', // use your mysql username.
+    password: 'kulsoom', // user your mysql password.
     database: 'logindata'
 });
 
