@@ -19,10 +19,15 @@
   "homepage": "https://github.com/F28WP-DUBAI-TASKS/WP-Coursework-#readme",
   "dependencies": {
     "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "mysql": "file:node_modules/mysql",
+    "mysql2": "^2.2.5",
     "pug": "^3.0.0",
+    "sequelize": "^6.3.5",
+    "sequelize-cli": "^6.2.0",
     "socket.io": "^3.0.1"
   },
   "devDependencies": {
