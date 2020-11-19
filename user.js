@@ -1,13 +1,13 @@
 const pool = require('./pool');
 const bcrypt = require('bcrypt');
-var mysql = require('mysql');
-var express = require('express');
-var session = require('express-session');
-var bodyParser = require('body-parser');
-var path = require('path');
-var server = require('http').createServer(app);
-const pageRouter = require('./routes/pages');
-var io = require('socket.io')(server);
+// var mysql = require('mysql');
+// var express = require('express');
+// var session = require('express-session');
+// var bodyParser = require('body-parser');
+// var path = require('path');
+// var server = require('http').createServer(app);
+// const pageRouter = require('./pages');
+// var io = require('socket.io')(server);
 
 
 function User() {};
