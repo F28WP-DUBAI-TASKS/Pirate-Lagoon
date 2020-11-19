@@ -1,4 +1,4 @@
-const User = require('../core/user');
+const User = require('../user');
 const router = express.Router();
 // var mysql = require('mysql');
 var express = require('express');
