@@ -46,6 +46,12 @@ Kulsoom Khan, Sukaina Mawji, Sai Shriya Surla, Areesha Arain, Syed Taqi
     
     - form.css :
     This file contains the styling for register and login page.
+    
+    
+# DEPENDANCIES : 
+  
+  - package.json, pagkage-lock.json
+  - node modules
    
 
    
