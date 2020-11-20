@@ -1,3 +1,14 @@
+// var mysql = require('mysql');
+var express = require('express');
+var session = require('express-session');
+var bodyParser = require('body-parser');
+var path = require('path');
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
+var app = express();
+
+
+
 $(window).load(function () 
 {
     $(".popup_trigger").click(function(){
