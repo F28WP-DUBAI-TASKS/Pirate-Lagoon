@@ -40,6 +40,13 @@ Kulsoom Khan, Sukaina Mawji, Sai Shriya Surla, Areesha Arain, Syed Taqi
    - login.html : 
    The html page for the login process.
    
+# CSS :
+    - style.css : 
+    This file contains the styling for index.html
+    
+    - form.css :
+    This file contains the styling for register and login page.
+   
 
    
   
