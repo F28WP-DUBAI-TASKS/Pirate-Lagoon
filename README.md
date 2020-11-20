@@ -31,13 +31,13 @@ Kulsoom Khan, Sukaina Mawji, Sai Shriya Surla, Areesha Arain, Syed Taqi
   The NodeJS file that helps users login to the game.
  
 # HTML:
-   -index.html : 
+   - index.html : 
    The html file that contains the code for the game.
    
-   -register.html : 
+   - register.html : 
    The html file for the registration of the username and password of a new player.
    
-   -login.html : 
+   - login.html : 
    The html page for the login process.
    
 
