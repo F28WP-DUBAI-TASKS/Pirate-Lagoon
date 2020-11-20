@@ -41,7 +41,7 @@ app.get('/', function(request, response) {
 });
 
 app.get('/home', function(request, response) {
-	response.sendFile(path.join(__dirname + '/gamePG1.html'));
+	response.sendFile(path.join(__dirname + '/index.html'));
 });
 
 app.post('/auth', function(request, response) {
