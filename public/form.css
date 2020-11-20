@@ -1,8 +1,15 @@
 * {padding: 0; margin: 0;}
 
+
+#background {
+ position: absolute;
+}
+
+
 body 
 {
     background-color: #F0F0F0;
+    font-family: 'Press Start 2P';
 }
 .table, .table td, .table tr
 {
@@ -76,6 +83,7 @@ nav ul li a:hover
 }
 input[type="text"], input[type="password"]
 {
+    font-family: 'Press Start 2P';
     padding: 8px 5px;
     margin: 0 0 5px 5px;
     min-width: 270px;
@@ -85,6 +93,7 @@ input[type="text"], input[type="password"]
 }
 input[type="submit"]
 {
+    font-family: 'Press Start 2P';
     float: right;
     padding: 7px 20px;
     font-size: 1.06em;
@@ -96,11 +105,13 @@ input[type="submit"]
 }
 input[type="text"]:focus , input[type="password"]:focus {
     background-color:#fff;
+    font-family: 'Press Start 2P';
 }
 input[type="submit"]:hover
 {
     background-color: #0fa3dd;
     border-color: 1px solid #098ec2;
+    font-family: 'Press Start 2P';
 }
 .error
 {
@@ -162,14 +173,15 @@ p
 
 /* LOGIN CSS */
 .login-form {
-    width: 300px;
-    margin: 0 auto;
-    font-family: Tahoma, Geneva, sans-serif;
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 300px;
+    font-family: 'Press Start 2P';
 }
 .login-form h1 {
     text-align: center;
-    color: #4d4d4d;
-    font-size: 24px;
+    color: #000000;
+    font-size: 30px;
     padding: 20px 0 20px 0;
 }
 .login-form input[type="password"],
@@ -183,10 +195,11 @@ p
 .login-form input[type="submit"] {
     width: 100%;
     padding: 15px;
-    background-color: #535b63;
+    font-size: 25px;
+    background-color: #f5f6f8;
     border: 0;
     box-sizing: border-box;
     cursor: pointer;
     font-weight: bold;
-    color: #ffffff;
+    color: #060a0c;
 }
