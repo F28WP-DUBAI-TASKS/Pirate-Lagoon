@@ -20,13 +20,13 @@ Kulsoom Khan, Sukaina Mawji, Sai Shriya Surla, Areesha Arain, Syed Taqi
             Step 3: Connect 4. - Best of three.
             Step 4: The scores of the games will be computed and the pirate with the highest score is declared, 'The Champion of The Lands Uninhabited'.
 # Javascript:
-  - index.js
+  - index.js :
   This JS file that contains code for connect 4.
   
-  - register.js
+  - register.js :
   The NodeJS file that registers the username and password of a new player.
   
-  - login.js
+  - login.js :
   The NodeJS file that helps users login to the game.
  
 # HTML:
