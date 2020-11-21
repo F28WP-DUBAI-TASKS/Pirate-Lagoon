@@ -1,4 +1,4 @@
-const pool = require('./pool');
+const pool = require('./core/pool');
 const bcrypt = require('bcrypt');
 // var mysql = require('mysql');
 // var express = require('express');
