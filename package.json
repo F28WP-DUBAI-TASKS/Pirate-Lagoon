@@ -27,7 +27,6 @@
     "morgan": "^1.10.0",
     "mysql": "file:node_modules/mysql",
     "mysql2": "^2.2.5",
-    "pug": "^3.0.0",
     "sequelize": "^6.3.5",
     "sequelize-cli": "^6.2.0",
     "socket.io": "^3.0.1"

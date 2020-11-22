@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 var connection = mysql.createConnection({
 	host     : 'localhost',
 	user     : 'root',
-	password : 'kulsoom',
+	password : 'abc123',
 	database : 'logindata',
 	insecureAuth : true
 });
@@ -40,7 +40,7 @@ app.use(session({
 
 
 // Routers
-app.use('/', pageRouter);
+app.use('/', mygameRouter);
 
 
 // Errors => page not found 404

@@ -1,4 +1,4 @@
-const User = require('../core/user');
+const User = require('../controllers/user');
 var express = require('express');
 var io = require('socket.io')(server);
 
@@ -37,12 +37,12 @@ mygameRouter.get('/', (req, res, next) => {
 
 // Get home page
 mygameRouter.get('/home', function(request, response) {
-	response.sendFile(path.join(__dirname + '/index.html'));
+	response.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
 
 // Post login data
-mygameRouter.post('/login', (req, res, next) => {
+mygameRouter.post('/public/login', (req, res, next) => {
     // The data sent from the user are stored in the req.body object.
     // call our login function and it will return the result(the user data).
     user.login(req.body.username, req.body.password, function(result) {
@@ -51,7 +51,7 @@ mygameRouter.post('/login', (req, res, next) => {
             req.session.user = result;
             req.session.opp = 1;
             // redirect the user to the home page.
-            res.redirect('/home');
+            res.redirect('/public/index.html');
         }else {
             // if the login function returns null send this error message back to the user.
             res.send('Username/Password incorrect!');
@@ -77,7 +77,7 @@ mygameRouter.post('/register', (req, res, next) => {
             user.find(lastId, function(result) {
                 req.session.user = result;
                 req.session.opp = 0;
-                res.redirect('/home');
+                res.redirect('/index.html');
             });
 
         }else {
@@ -88,8 +88,8 @@ mygameRouter.post('/register', (req, res, next) => {
 });
 
 
-// Get loggout page
-mygameRouter.get('/loggout', (req, res, next) => {
+// Get logout page
+mygameRouter.get('/logout', (req, res, next) => {
     // Check if the session is exist
     if(req.session.user) {
         // destroy the session and redirect the user to the index page.
