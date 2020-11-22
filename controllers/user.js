@@ -4,14 +4,14 @@ const login = (request, response, next) => {
 //…
 //otherwise check retrieve their password from database and check it against submitted one
 //here we assume you have a method selectPassword in database/usersSQL.js that queries the database to select password using username
-    const {selectPassword} = require('../Databases/usersSQL);
+    const {selectPassword} = require('../Databases/usersSQL');
  
     let username = request.body.username;
     let submittedPassword = request.body.password;
 //hash password here
  
     loginSQL (username, function(err, selectedPassword) {
-       if (selectedPassword === null || selectedPassword == “” || selectedPassword === undefined) {
+       if (selectedPassword === null || selectedPassword == "" || selectedPassword === undefined) {
             response.write("No user with this username!");
         } else {
            if (selectedPassword === submittedPassword) {
@@ -29,7 +29,7 @@ const login = (request, response, next) => {
  
 const register = (request, response, next) => {
 //here we assume you have a method insertUser in database/usersSQL.js that inserts username and password in the database 
-    const {insertUser} = require('../Dabase/users);
+    const {insertUser} = require('../Dabase/users');
  
     let username = request.body.username;
     let password = request.body.password;
