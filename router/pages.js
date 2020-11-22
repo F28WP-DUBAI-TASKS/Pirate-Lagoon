@@ -1,5 +1,7 @@
-const User = require('../controllers/user');
+const users = require('../controllers/user');
 var express = require('express');
+var server = require('http').createServer(app);
+var app = express();
 var io = require('socket.io')(server);
 
 //define a router
@@ -9,22 +11,22 @@ const mygameRouter = express.Router();
 
 //this assumes that you have a method called register in the module users.js under the folder controllers
 
-mygameRouter.post('/api/register, users.register');
+mygameRouter.post('/public/register, users.register');
 
 //define a POST route /api/login to check the password of a user willing to log-in
 
 //this assumes that you have a method called login in the module users.js under the folder controllers
 
-mygameRouter.post('/api/login', users.login);
+mygameRouter.post('/controllers/user, users.login');
 
 //define any other GET or POST routes
 
 //here
 // create an object from the class User in the file core/user.js
-const user = new User();
+// user = new User();
 
 // Get the index page
-mygameRouter.get('/', (req, res, next) => {
+mygameRouter.get('/public/index.html', (req, res, next) => {
     let user = req.session.user;
     // If there is a session named user that means the use is logged in. so we redirect him to home page by using /home route below
     if(user) {
@@ -42,7 +44,7 @@ mygameRouter.get('/home', function(request, response) {
 
 
 // Post login data
-mygameRouter.post('/public/login', (req, res, next) => {
+mygameRouter.post('/controllers/user', (req, res, next) => {
     // The data sent from the user are stored in the req.body object.
     // call our login function and it will return the result(the user data).
     user.login(req.body.username, req.body.password, function(result) {

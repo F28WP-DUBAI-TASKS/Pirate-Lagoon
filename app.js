@@ -1,25 +1,12 @@
-const mygameRouter = require('./router/pages');
-app.use(mygameRouter);
-
-//define the route for static files that must be submitted to the client
-
-app.use(express.static('public'));
-
-//if we get a GET with / we send index.html the main page of the game
-
-app.get('/', (request, response) => {
-
-    res.sendFile('public/index.html', { root: __dirname });
-
-});
 
 const express = require('express');
-
 var session = require('express-session');
-
-const favicon = require('serve-favicon');
-
 const app = express();
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
+//const favicon = require('serve-favicon');
+
+
 
 const path = require('path');
 
@@ -29,8 +16,25 @@ const morgan = require("morgan");
 
 app.use(morgan('dev'));
 
-app.use(favicon(path.join(__dirname, 'views', 'favicon.ico')));
+//app.use(favicon(path.join(__dirname, 'views', 'favicon.ico')));
 
+
+
+const mygameRouter = require('./router/pages');
+app.use(mygameRouter);
+
+//define the route for static files that must be submitted to the client
+
+app.use(express.static('public'));
+
+
+//if we get a GET with / we send index.html the main page of the game
+
+app.get('/', (request, response) => {
+
+    res.sendFile('public/index.html', { root: __dirname });
+
+});
 
 //define a session to store username of logged-in user
 
@@ -52,7 +56,7 @@ app.use(express.static('public'));
 
 //if we get a GET with / we send index.html the main page of the game
 
-app.get('/', (request, response) => {
+app.get('/public/index.html', (request, response) => {
 
     res.sendFile('public/index.html', { root: __dirname });
 
@@ -78,7 +82,8 @@ createDB();
 
 const port = process.argv[2] || process.env.PORT || 3000;
 
-const server = app.listen(port, () => {
+// const server =
+ app.listen(3000, () =>  {
 
     console.log(`My server is running and listening at http://localhost:${port}`);
 
