@@ -1,19 +1,30 @@
 const User = require('../core/user');
-const router = express.Router();
-// var mysql = require('mysql');
 var express = require('express');
-// var session = require('express-session');
-// var bodyParser = require('body-parser');
-// var path = require('path');
-// var server = require('http').createServer(app);
-// const pageRouter = require('./pages');
 var io = require('socket.io')(server);
 
+//define a router
+const mygameRouter = express.Router();
+
+//define a POST route /api/register to register a new user
+
+//this assumes that you have a method called register in the module users.js under the folder controllers
+
+mygameRouter.post('/api/register, users.register');
+
+//define a POST route /api/login to check the password of a user willing to log-in
+
+//this assumes that you have a method called login in the module users.js under the folder controllers
+
+mygameRouter.post('/api/login', users.login);
+
+//define any other GET or POST routes
+
+//here
 // create an object from the class User in the file core/user.js
 const user = new User();
 
 // Get the index page
-router.get('/', (req, res, next) => {
+mygameRouter.get('/', (req, res, next) => {
     let user = req.session.user;
     // If there is a session named user that means the use is logged in. so we redirect him to home page by using /home route below
     if(user) {
@@ -25,18 +36,13 @@ router.get('/', (req, res, next) => {
 })
 
 // Get home page
-router.get('/home', (req, res, next) => {
-    let user = req.session.user;
-
-    if(user) {
-        res.render('home', {opp:req.session.opp, name:user.fullname});
-        return;
-    }
-    res.redirect('/');
+mygameRouter.get('/home', function(request, response) {
+	response.sendFile(path.join(__dirname + '/index.html'));
 });
 
+
 // Post login data
-router.post('/login', (req, res, next) => {
+mygameRouter.post('/login', (req, res, next) => {
     // The data sent from the user are stored in the req.body object.
     // call our login function and it will return the result(the user data).
     user.login(req.body.username, req.body.password, function(result) {
@@ -56,7 +62,7 @@ router.post('/login', (req, res, next) => {
 
 
 // Post register data
-router.post('/register', (req, res, next) => {
+mygameRouter.post('/register', (req, res, next) => {
     // prepare an object containing all user inputs.
     let userInput = {
         username: req.body.username,
@@ -83,7 +89,7 @@ router.post('/register', (req, res, next) => {
 
 
 // Get loggout page
-router.get('/loggout', (req, res, next) => {
+mygameRouter.get('/loggout', (req, res, next) => {
     // Check if the session is exist
     if(req.session.user) {
         // destroy the session and redirect the user to the index page.
@@ -92,5 +98,7 @@ router.get('/loggout', (req, res, next) => {
         });
     }
 });
+ 
+//export router
 
-module.exports = router;
+module.exports = mygameRouter;
