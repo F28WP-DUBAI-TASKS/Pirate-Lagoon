@@ -29,7 +29,8 @@
     "mysql2": "^2.2.5",
     "sequelize": "^6.3.5",
     "sequelize-cli": "^6.2.0",
-    "socket.io": "^3.0.1"
+    "socket.io": "^3.0.1",
+    "sql-template-strings": "^2.2.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
