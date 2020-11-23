@@ -116,10 +116,11 @@
     width: 40px;
     margin: 20px;
     font-weight: bold;
+    position: fixed;
 }
 
 #canongame1 {
-    position: absolute;
+    position: fixed;
     z-index: 1100;
     margin-top: 310px;
     margin-left: -200px;

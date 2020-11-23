@@ -29,7 +29,7 @@ const login = (request, response, next) => {
  
 const register = (request, response, next) => {
 //here we assume you have a method insertUser in database/usersSQL.js that inserts username and password in the database 
-    const {insertUser} = require('../Dabase/users');
+    const {insertUser} = require('../controllers/users');
  
     let username = request.body.username;
     let password = request.body.password;
