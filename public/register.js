@@ -41,6 +41,9 @@ app.use(session({
 
 // Routers
 app.use('/', mygameRouter);
+app.get('/home', function(request, response) {
+    	response.sendFile(path.join(__dirname + '/login.html'));
+     });
 
 
 // Errors => page not found 404
