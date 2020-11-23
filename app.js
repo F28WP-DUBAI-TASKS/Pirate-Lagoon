@@ -30,11 +30,11 @@ app.use(express.static('public'));
 
 //if we get a GET with / we send index.html the main page of the game
 
-app.get('/', (request, response) => {
+// app.get('/', (request, response) => {
 
-    res.sendFile('public/index.html', { root: __dirname });
+//     res.sendFile('public/index.html', { root: __dirname });
 
-});
+// });
 
 //define a session to store username of logged-in user
 
@@ -56,9 +56,9 @@ app.use(express.static('public'));
 
 //if we get a GET with / we send index.html the main page of the game
 
-app.get('/public/index.html', (request, response) => {
+app.get('/public/login.html', (request, response) => {
 
-    res.sendFile('public/index.html', { root: __dirname });
+    res.sendFile('public/login.html', { root: __dirname });
 
 });
 
