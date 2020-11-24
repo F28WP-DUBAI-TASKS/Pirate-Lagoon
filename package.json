@@ -2,9 +2,10 @@
   "name": "WP-Coursework-",
   "version": "1.0.0",
   "description": "WP GAME Battle TBD / Cannon Water/ Pirates/",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",

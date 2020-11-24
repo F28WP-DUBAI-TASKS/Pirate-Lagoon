@@ -2,8 +2,7 @@
 const express = require('express');
 var session = require('express-session');
 const app = express();
-var server = require('http').createServer(app);
-var io = require('socket.io')(server);
+
 //const favicon = require('serve-favicon');
 
 
@@ -20,12 +19,10 @@ app.use(morgan('dev'));
 
 
 
-const mygameRouter = require('./router/pages');
+const mygameRouter = require('./router/routes');
 app.use(mygameRouter);
 
 //define the route for static files that must be submitted to the client
-
-app.use(express.static('public'));
 
 
 //if we get a GET with / we send index.html the main page of the game
@@ -56,9 +53,9 @@ app.use(express.static('public'));
 
 //if we get a GET with / we send index.html the main page of the game
 
-app.get('/public/login.html', (request, response) => {
-
-    res.sendFile('public/login.html', { root: __dirname });
+app.get('/', (request, response) => {
+console.log('slash route');
+    response.sendFile('public/login.html', { root: __dirname });
 
 });
 
@@ -74,7 +71,7 @@ app.use(express.urlencoded());
 
 //This assumes you have a module called newdb.js that exports the method created()
 
-const createDB = require('./Databases/db');
+//const createDB = require('./Databases/db');
 
 //createDB();
 // const db = require('db');
@@ -85,8 +82,9 @@ const createDB = require('./Databases/db');
 const port = process.argv[2] || process.env.PORT || 3000;
 
 // const server =
- app.listen(3000, () =>  {
+ const server = app.listen(3000, () =>  {
 
     console.log(`My server is running and listening at http://localhost:${port}`);
 
 });
+var io = require('socket.io')(server);

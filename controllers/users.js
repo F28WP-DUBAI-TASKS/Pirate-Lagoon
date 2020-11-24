@@ -29,28 +29,40 @@ const login = (request, response, next) => {
  
 const register = (request, response, next) => {
 //here we assume you have a method insertUser in database/usersSQL.js that inserts username and password in the database 
-    const {insertUser} = require('../controllers/users');
+    const {insertUser} = require('./users');
  
     let username = request.body.username;
     let password = request.body.password;
 //hash password here
  
-    userUser (username, password, function(err, count, insertedID) {
+    insertUser (username, password, function(err, count, insertedID) {
        if (count === 0) {
             response.write("User could not be added!");
         } else {
                 response.write("User registered successfully!");
                 response.write("ID = " + insertedID);
               //add username to the session
+              
        }
         response.end();
         next();
     });
 };
  
+const logout = (request, response, next)=> {
+    // Check if the session is exist
+    if(req.session.user) {
+        // destroy the session and redirect the user to the index page.
+        req.session.destroy(function() {
+            res.redirect('/');
+        });
+    }
+
+};
 module.exports = {
     register,
-    login
+    login,
+    logout
 };
 
 

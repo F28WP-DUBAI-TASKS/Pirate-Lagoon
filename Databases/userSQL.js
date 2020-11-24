@@ -63,7 +63,7 @@ function insertUser(username, password, callback) {
 module.exports = {
     selectPassword,
     insertUser
-
+};
 
 
 
@@ -85,5 +85,3 @@ module.exports = {
 
 // ALTER TABLE `accounts` ADD PRIMARY KEY (`id`);
 // ALTER TABLE `accounts` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
-
-}
