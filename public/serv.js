@@ -1,21 +1,17 @@
 var express = require('express'),
 	game_logic = require('./game_logic'),
 	app = express(),
-	server = require('http').createServer(app),
+	http = require('http'),
+	server = http.createServer(app),
 	port = Number(process.env.PORT || 3000),
-	io = require('socket.io').listen(server);
+	io = require('socket.io')(server);
 
-// server.listen(port);
-
-
-
-
-
+server.listen(port);
 
 /*routing*/
-app.use("/", express.static(__dirname + '/public'));
-app.use("/", express.static(__dirname + '/public'));
-app.use("/", express.static(__dirname + '/public'));
+app.use("/public", express.static(__dirname + '/game.html'));
+app.use("/public", express.static(__dirname + '/style.css'));
+app.use("/public", express.static(__dirname + '/game_logic.js'));
 
 app.get('/', function(req, res){
 	res.writeHead(302, {
