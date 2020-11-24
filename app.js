@@ -74,9 +74,11 @@ app.use(express.urlencoded());
 
 //This assumes you have a module called newdb.js that exports the method created()
 
-// const createDB = require('./Databases/db');
+const createDB = require('./Databases/db');
 
-// createDB();
+//createDB();
+// const db = require('db');
+
 
 //make the app listen on port
 

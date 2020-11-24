@@ -26,7 +26,7 @@ mygameRouter.post('/controllers/user, users.login');
 // user = new User();
 
 // Get the index page
-mygameRouter.get('/public/login.html', (req, res, next) => {
+mygameRouter.get('/public/index.html', (req, res, next) => {
     let user = req.session.user;
     // If there is a session named user that means the use is logged in. so we redirect him to home page by using /home route below
     if(user) {
@@ -39,7 +39,7 @@ mygameRouter.get('/public/login.html', (req, res, next) => {
 
 // Get home page
 mygameRouter.get('/home', function(request, response) {
-	response.sendFile(path.join(__dirname + '/public/login.html'));
+	response.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
 
@@ -79,7 +79,7 @@ mygameRouter.post('/register', (req, res, next) => {
             user.find(lastId, function(result) {
                 req.session.user = result;
                 req.session.opp = 0;
-                res.redirect('/login.html');
+                res.redirect('/index.html');
             });
 
         }else {
