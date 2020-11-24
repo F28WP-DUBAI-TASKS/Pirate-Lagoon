@@ -1,3 +1,7 @@
+ //k
+
+
+
 $(window).load(function () 
 {
     $(".popup_trigger").click(function(){
@@ -9,154 +13,172 @@ $(window).load(function ()
     $('.popupCloseButton').click(function(){
         $('.bkgd').hide();
     });
+    $(function(){
+        var socket = io.connect(),
+        player = {},
+        yc = $('.your_color'),
+        oc = $('.opponent_color'),
+        your_turn = false,
+        url = window.location.href.split('/'),
+        room = url[url.length-1];
     
-while (!player1){
-    var player1 = prompt('Player One: Enter your name. You will be red.');
-};
-var player1Color = 'red';
-
-while (!player2){
-    var player2 = prompt('Player Two: Enter your name. You will be yellow.');
-};
-var player2Color = 'yellow';
-
-// Selectors
-
-
-var tableRow = document.getElementsByTagName('tr');
-var tableData = document.getElementsByTagName('td');
-var playerTurn = document.querySelector('.player-turn');
-const slots = document.querySelectorAll('.slot');
-const resetBtn = document.querySelector('.reset');
-
-
-var currentPlayer = 1;
-let winner;
-playerTurn.textContent = `${player1}'s turn!`
-
-// Log cell coordinates when clicked
-
-for (i = 0; i < tableData.length; i ++){
-    tableData[i].addEventListener('click', (e) =>{
-        console.log(`${e.target.parentElement.rowIndex},${e.target.cellIndex}`)
-    });
-};
-
-
-// Funtions
-
-function changeColor(e){
-    // Get clicked column index
-    let column = e.target.cellIndex;
-    let row = [];
-
-    for (i = 5; i > -1; i--){
-        if (tableRow[i].children[column].style.backgroundColor == 'white'){
-            row.push(tableRow[i].children[column]);
-            if (currentPlayer === 1){
-                row[0].style.backgroundColor = 'red';
-                if (horizontalCheck() || verticalCheck() || diagonalCheck() || diagonalCheck2()){
-                    playerTurn.textContent = `${player1} WINS!!`;
-                    playerTurn.style.color = player1Color;
-                    return alert(`${player1} WINS!!`);
-                }else if (drawCheck()){
-                    playerTurn.textContent = 'DRAW!';
-                    return alert('DRAW!');
-                }else{
-                    playerTurn.textContent = `${player2}'s turn`
-                    return currentPlayer = 2;
-                }
+        var text = {
+            'yt' : "Your turn",
+            'nyt' : "Waiting for opponent",
+            'popover_h2' : "Waiting for opponent",
+            'popover_p' : "Give the url to a friend to play a game",
+            'popover_h2_win' : "You won the game!",
+            'popover_p_win' : "Give the url to a friend to play another game",
+            'popover_h2_lose' : "You lost the game..",
+            'popover_p_lose' : "Give the url to a friend to play another game",
+            'popover_h2_draw' : "Its a draw.. bummer!",
+            'popover_p_draw' : "Give the url to a friend to play another game",
+        }
+    
+        init();
+    
+        socket.on('assign', function(data) {
+            player.pid = data.pid;
+            player.hash = data.hash;
+            if(player.pid == "1"){
+                yc.addClass('red');
+                oc.addClass('yellow');
+                player.color = 'red';
+                player.oponend = 'yellow';
+                $('.underlay').removeClass('hidden');
+                $('.popover').removeClass('hidden');
             }else{
-                row[0].style.backgroundColor = 'yellow';
-                if (horizontalCheck() || verticalCheck() || diagonalCheck() || diagonalCheck2()){
-                    playerTurn.textContent = `${player2} WINS!!`;
-                    playerTurn.style.color = player2Color;
-                    return alert(`${player2} WINS!!`);
-                }else if (drawCheck()){
-                    playerTurn.textContent = 'DRAW!';
-                    return alert('DRAW!');
-                }else{
-                    playerTurn.textContent = `${player1}'s turn`;
-                    return currentPlayer = 1;
+                $('.status').html(text.nyt);
+                yc.addClass('yellow');
+                oc.addClass('red');
+                oc.addClass('show');
+                player.color = 'yellow';
+                player.oponend = 'red';
+            }
+        });
+    
+        socket.on('winner', function(data) {
+            oc.removeClass('show');
+            yc.removeClass('show');
+            change_turn(false);
+            for(var i = 0; i < 4; i++){
+                $('.cols .col .coin#coin_'+data.winner.winner_coins[i]).addClass('winner_coin');
+            }
+    
+            if(data.winner.winner == player.pid){
+                $('.popover h2').html(text.popover_h2_win);
+                $('.popover p').html(text.popover_p_win);
+            }else{
+                $('.popover h2').html(text.popover_h2_lose);
+                $('.popover p').html(text.popover_p_lose);
+            }
+            
+            setTimeout(function(){
+                $('.underlay').removeClass('hidden');
+                $('.popover').removeClass('hidden');
+            },2000);
+        });
+    
+        socket.on('draw', function() {
+            oc.removeClass('show');
+            yc.removeClass('show');
+            change_turn(false);
+            $('.popover h2').html(text.popover_h2_draw);
+            $('.popover p').html(text.popover_p_draw);
+            setTimeout(function(){
+                $('.underlay').removeClass('hidden');
+                $('.popover').removeClass('hidden');
+            },2000);
+        });
+    
+        socket.on('start', function(data) {
+            change_turn(true);
+            yc.addClass('show');
+            $('.underlay').addClass('hidden');
+            $('.popover').addClass('hidden');
+        });
+    
+        socket.on('stop', function(data) {
+            init();
+            reset_board();
+        });
+    
+        socket.on('move_made', function(data) {
+            make_move(data.col+1, true);
+            change_turn(true);
+            yc.addClass('show');
+            oc.removeClass('show');
+        });
+    
+        socket.on('opponent_move', function(data) {
+            if(!your_turn){
+                oc.css('left', parseInt(data.col)*100);
+            }
+            console.debug(data);
+        });
+    
+        $('.cols > .col').mouseenter(function(){
+            if(your_turn){
+                yc.css('left', $(this).index()*100);
+                socket.emit('my_move', {col: $(this).index()});
+            }
+        });
+    
+        $('.cols > .col').click(function(){
+            if(parseInt($(this).attr('data-in-col')) < 6){
+                if(your_turn){
+                    var col = $(this).index()+1;
+                    make_move(col);
+                    socket.emit('makeMove', {col: col-1, hash: player.hash});
+                    change_turn(false);
+                    yc.removeClass('show');
+                    oc.addClass('show');
                 }
-                
+            }
+        });
+    
+        function make_move(col, other){
+            if(!other) other = false;
+            var col_elm = $('.cols > .col#col_'+col);
+            var current_in_col = parseInt(col_elm.attr('data-in-col'));
+            col_elm.attr('data-in-col', current_in_col+1);
+            var color = (other) ? player.oponend : player.color;
+            var new_coin = $('<div class="coin '+color+'" id="coin_'+(5-current_in_col)+''+(col-1)+'"></div>');
+            col_elm.append(new_coin);
+            new_coin.animate({
+                top : 100*(4-current_in_col+1),
+            }, 400);
+        }
+    
+        function init(){
+            socket.emit('join', {room: room});
+            $('.popover input').val(window.location.href);
+            $('.popover h2').html(text.popover_h2);
+            $('.popover p').html(text.popover_p);
+            $('.status').html('');
+        }
+    
+        function reset_board(){
+            $('.cols .col').attr('data-in-col', '0').html('');
+            yc.removeClass('yellow red');
+            oc.removeClass('yellow red');
+            yc.removeClass('show');
+            oc.removeClass('show');
+        }
+    
+        function change_turn(yt){
+            if(yt){
+                your_turn = true;
+                $('.status').html(text.yt);
+            }else{
+                your_turn = false;
+                $('.status').html(text.nyt);
             }
         }
-    }
-   
-}
-
-Array.prototype.forEach.call(tableData, (cell) => {
-    cell.addEventListener('click', changeColor);
-    // Set all slots to white for new game.
-    cell.style.backgroundColor = 'white';
-});
-
-function colorMatchCheck(one, two, three, four){
-    return (one === two && one === three && one === four && one !== 'white' && one !== undefined);
-}
-
-function horizontalCheck(){
-    for (let row = 0; row < tableRow.length; row++){
-        for (let col =0; col < 4; col++){
-           if (colorMatchCheck(tableRow[row].children[col].style.backgroundColor,tableRow[row].children[col+1].style.backgroundColor, 
-                                tableRow[row].children[col+2].style.backgroundColor, tableRow[row].children[col+3].style.backgroundColor)){
-               return true;
-           }
-        }
-    }
-}
-
-function verticalCheck(){
-    for (let col = 0; col < 7; col++){
-        for (let row = 0; row < 3; row++){
-            if (colorMatchCheck(tableRow[row].children[col].style.backgroundColor, tableRow[row+1].children[col].style.backgroundColor,
-                                tableRow[row+2].children[col].style.backgroundColor,tableRow[row+3].children[col].style.backgroundColor)){
-                return true;
-            };
-        }   
-    }
-}
-
-function diagonalCheck(){
-    for(let col = 0; col < 4; col++){
-        for (let row = 0; row < 3; row++){
-            if (colorMatchCheck(tableRow[row].children[col].style.backgroundColor, tableRow[row+1].children[col+1].style.backgroundColor,
-                tableRow[row+2].children[col+2].style.backgroundColor,tableRow[row+3].children[col+3].style.backgroundColor)){
-                    return true;
-                }
-            }
-        }
-
-}
-
-function diagonalCheck2(){
-    for(let col = 0; col < 4; col++){
-        for (let row = 5; row > 2; row--){
-            if (colorMatchCheck(tableRow[row].children[col].style.backgroundColor, tableRow[row-1].children[col+1].style.backgroundColor,
-                tableRow[row-2].children[col+2].style.backgroundColor,tableRow[row-3].children[col+3].style.backgroundColor)){
-                    return true;
-            }
-        }
-    }
-}
-function drawCheck(){
-    let fullSlot = []
-    for (i=0; i < tableData.length; i++){
-        if (tableData[i].style.backgroundColor !== 'white'){
-            fullSlot.push(tableData[i]);
-        }
-    }
-    if (fullSlot.length === tableData.length){
-        return true;
-    }
-}
-resetBtn.addEventListener('click', () => {
-    slots.forEach(slot => {
-        slot.style.backgroundColor = 'white';
+        
+        $('.popover input').click(function(){
+             $(this).select();
+        });
+    
     });
-    playerTurn.style.color = 'black';
-    return (currentPlayer === 1 ? playerTurn.textContent = `${player1}'s turn` : playerTurn.textContent = `${player2}'s turn`);
-});
-
 });

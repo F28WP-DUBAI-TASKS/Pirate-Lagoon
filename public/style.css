@@ -173,46 +173,213 @@ body {
     padding: .5rem;
 }
 
-.container table tr td {
-    width: 90px;
-    height: 80px;
-    border: 2px solid black;
-    border-radius: 50%;
-    background-color: white;
-    cursor: pointer;
+
+.board{
+    position: relative;
+	width: 700px;
+    height: 600px;
+    z-index: -10000;
+	background: #00658F;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0px 10px 43px -16px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 10px 43px -16px rgba(0,0,0,0.75);
+	box-shadow: 0px 10px 43px -16px rgba(0,0,0,0.75);
+}
+.blueb{
+    z-index: -10000;
+    position: relative;
+}
+.game{
+	position: relative;
+	width: 700px;
+    margin: 100px auto 0;
+    z-index: 10000;
+    margin-top: 0rem;
+    margin-right: center;
+
 }
 
-.reset {
-    position: absolute;
-    top: 31.5rem;
-    left: 50%;
-    transform: translate(-50%);
-    width: 100px;
-    height: 30px;
-    text-align: center;
-    padding: 0.3rem;
-    border: 1px solid black;
-    background: #ffffff;
-    cursor: pointer;
-    transition: .5s;
+.your_color{
+	position: absolute;
+	top: -100px;
+	margin-left: 5px;
+	width: 90px;
+	height: 90px;
+	-webkit-border-radius: 45px;
+	-moz-border-radius: 45px;
+	border-radius: 45px;
+	background: #000;
+	opacity: 0;
 }
 
-.reset:hover {
-    transition: 0.8s;
-    box-shadow: 0px 0px #888888;
+.your_color.show{
+	opacity: 1;
 }
 
-@media screen and (max-width: 600px) {
-    .container {
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%);
-        width: 90%;
-        height: 520px;
-        top: 9rem;
-        border: 2px solid black;
-        padding: .5rem;
+.opponent_color{
+	position: absolute;
+	top: -100px;
+	margin-left: 5px;
+	width: 90px;
+	height: 90px;
+	-webkit-border-radius: 45px;
+	-moz-border-radius: 45px;
+	border-radius: 45px;
+	background: #000;
+	opacity: 0;
+}
+
+.opponent_color.show{
+	opacity: .3;
+}
+
+.board .overlay{
+	position: absolute;
+	z-index: 10000;
+	left: 0;
+	top: 0;
+	pointer-events: none;
+	-webkit-filter: drop-shadow( 5px 5px 5px rgba(0,0,0,0.1));
+	filter: drop-shadow( 5px 5px 5px rgba(0,0,0,0.1));
+}
+
+.cols{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 100;
+}
+
+.cols > .col{
+	position: relative;
+	float: left;
+	width: 100px;
+	height: 100%;
+}
+
+@-moz-keyframes blink {0%{opacity:1;} 50%{opacity:.5;} 100%{opacity:1;}}
+@-webkit-keyframes blink {0%{opacity:1;} 50%{opacity:.5;} 100%{opacity:1;}}
+@-ms-keyframes blink {0%{opacity:1;} 50%{opacity:.5;} 100%{opacity:1;}}
+@keyframes blink {0%{opacity:1;} 50%{opacity:.5;} 100%{opacity:1;}}
+.coin.winner_coin{
+	-moz-transition:all 1s ease-in-out;
+	-webkit-transition:all 1s ease-in-out;
+	-o-transition:all 1s ease-in-out;
+	-ms-transition:all 1s ease-in-out;
+	transition:all 1s ease-in-out;
+	-moz-animation:blink normal 1s infinite ease-in-out;
+	-webkit-animation:blink normal 1s infinite ease-in-out;
+	-ms-animation:blink normal 1s infinite ease-in-out;
+	animation:blink normal 1s infinite ease-in-out;
+}
+
+.coin{
+	position: absolute;
+	left: 5px;
+	margin-top: 5px;
+	width: 90px;
+	height: 90px;
+	-webkit-border-radius: 45px;
+	-moz-border-radius: 45px;
+	border-radius: 45px;
+}
+
+.red{
+	background: #e61;
+}
+.yellow{
+	background: #0ba;
+}
+
+.hidden{
+	display: none;
+}
+
+/* overlay with popups */
+
+.underlay{
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,.5);
+	z-index: 10000;
+}
+
+.popover{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -200px;
+	margin-top: -150px;
+	box-sizing: border-box;
+	padding: 10px;
+	height: 130px;
+	width: 400px;
+	background: #f2f2f2;
+	z-index: 10000;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0px 10px 43px -16px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 10px 43px -16px rgba(0,0,0,0.75);
+	box-shadow: 0px 10px 43px -16px rgba(0,0,0,0.75);
+}
+
+.popover h2{
+	font-size: 24px;
+	padding: 0;
+	margin: 0;
+    line-height: 1.5em;
+    z-index: 10000;
+
+}
+
+.popover p{
+	margin: 0;
+	padding: 0;
+    line-height: 2em;
+    z-index: 10000;
+
+}
+
+.popover input{
+	position: absolute;
+	bottom: 10px;
+	width: 380px;
+	line-height: 2em;
+	font-size: 16px;
+	box-sizing: border-box;
+	padding: 0 10px;
+	border: 1px solid #333;
+    outline: none;
+    z-index: 10000;
+
+}
+
+.status{
+	position: absolute;
+	bottom: -40px;
+	width: 100%;
+	text-align: center;
+	line-height: 40px;
+	font-size: 20px;
+	color: #fff;
+	background-color: #e64;
+	border-radius: 0 0 10px 10px;
+}
+.link{
+    z-index: 20000;
+    position: relative;
+
+}
+
+@media only screen and (max-device-width: 768px) {
+	.game {
+		margin: 120px 0;
+		zoom: 138% !important;
     }
 }
-
-
