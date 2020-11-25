@@ -85,4 +85,19 @@ router.get('/loggout', (req, res, next) => {
     }
 });
 
+// express.use("/public", express.static(__dirname + '/game'));
+// express.use("/public", express.static(__dirname + '/css/style'));
+// // express.use("/public", express.static(__dirname + '/game_logic'));
+
+// express.get('/', function(req, res){
+// 	res.writeHead(302, {
+// 		'Location': '/'+generateHash(6)
+// 	});
+// 	res.end();
+// })
+
+// express.get('/:room([A-Za-z0-9]{6})', function(req, res) {
+// 	res.sendFile(__dirname+'/public/game.html');
+// });
+
 module.exports = router;

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="/public/js/index.js"></script>
+  <link rel="stylesheet" type="text/css" href="/public/css/style.css">
+  <script src="/socket.io/socket.io.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<div class="bg">
+  <video id="bgvid" playsinline="" autoplay="" muted="" loop="" poster="BG1.jpg">
+    <source src="gifbg.mp4" type="video/mp4">
+  </video>
+</div>
+<!-- >>>>>>>>>>>>>>>>>>>>>-->
+<div class="titlepic"><img src="titlepic.png" alt="titlepic"></div>
+<div class="ship"><img src="ship.png" alt="ship"></div>
+<div class="shiprev"><img src="shiprev.png" alt="ship"></div>
+<div><a class="popup_trigger"><img id="canongame1" src="canon.png"></a></div>
+<div class="bkgd"><span class="helper"></span>
+  <div>
+    <div class="popupCloseButton">&times;</div>
+    <h1>Connect Four</h1>
+    <!-- >>>>>>>>>>>>>>>>Connect4 game>>>>>>>>>>>>>>>>>>>-->
+    <h3 class="player-turn"></h3>
+    <div class="container">
+      <div class="game">
+        <div class="your_color"></div>
+        <div class="opponent_color"></div>
+        <div class="board"><img class="blueb" src="board.png">
+          <div class="cols">
+            <div class="col" id="col_1" data-in-col="0"></div>
+            <div class="col" id="col_2" data-in-col="0"></div>
+            <div class="col" id="col_3" data-in-col="0"></div>
+            <div class="col" id="col_4" data-in-col="0"></div>
+            <div class="col" id="col_5" data-in-col="0"></div>
+            <div class="col" id="col_6" data-in-col="0"></div>
+            <div class="col" id="col_7" data-in-col="0"></div>
+          </div>
+        </div>
+        <div class="status">Your turn!</div>
+      </div>
+      <div class="underlay hidden"></div>
+      <div class="popover hidden">
+        <h2>Waiting for opponent</h2>
+        <p>Give the url to a friend to play a game</p>
+        <div class="link">
+          <input class="share_url" type="text" value="">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

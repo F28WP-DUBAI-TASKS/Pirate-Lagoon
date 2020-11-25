@@ -4,25 +4,28 @@ var express = require('express'),
 	http = require('http'),
 	server = http.createServer(app),
 	port = Number(process.env.PORT || 3000),
-	io = require('socket.io')(server);
+	io = require('socket.io')(server),
+	path = require('path');
 
 server.listen(port);
 
 /*routing*/
-app.use("/public", express.static(__dirname + '/game.html'));
-app.use("/public", express.static(__dirname + '/style.css'));
-app.use("/public", express.static(__dirname + '/game_logic.js'));
+ app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', function(req, res){
-	res.writeHead(302, {
-		'Location': '/'+generateHash(6)
-	});
-	res.end();
-})
 
-app.get('/:room([A-Za-z0-9]{6})', function(req, res) {
-	res.sendFile(__dirname+'/game.html');
-});
+
+
+
+ app.get('/', function(req, res){
+ 	res.writeHead(302, {
+ 		'Location': '/'+generateHash(6)
+ 	});
+ 	res.end();
+ })
+
+ app.get('/:room([A-Za-z0-9]{6})', function(req, res) {
+ 	res.sendFile(__dirname+'/game.html');
+ });
 
 function generateHash(length) {
 	var haystack = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',

@@ -4,8 +4,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="index.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="/public/js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css">
     <script src="/socket.io/socket.io.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,8 +19,7 @@
     <source src="gifbg.mp4" type="video/mp4">
     </video>
 </div>
-
-<!-- >>>>>>>>>>>>>>>>>>>>> -->
+<!--  >>>>>>>>>>>>>>>>>>>>> -->
 
 
     <div class="titlepic">
@@ -47,15 +46,14 @@
         <h1>Connect Four</h1>
  
 <!-- >>>>>>>>>>>>>>>>Connect4 game>>>>>>>>>>>>>>>>>>> -->
-    <h3 class="player-turn"></h3>
 
     <div class="container">
-
+        
         <div class="game">
             <div class="your_color"></div>
             <div class="opponent_color"></div>
             <div class="board">
-                <img class= "blueb" src="board.png" class="overlay">
+                <img src="/public/board.png" class="overlay">
                 <div class="cols">
                     <div class="col" id="col_1" data-in-col="0"></div>
                     <div class="col" id="col_2" data-in-col="0"></div>
@@ -73,16 +71,12 @@
         <div class="popover hidden">
             <h2>Waiting for opponent</h2>
             <p>Give the url to a friend to play a game</p>
-        <div class ="link" >   <input type="text" class="share_url" value=""></div>
+            <input type="text" class="share_url" value="">
         </div>
 
 
     </div>
 </div>
-    </div>
-</div>
-
-
 
 
 </body>

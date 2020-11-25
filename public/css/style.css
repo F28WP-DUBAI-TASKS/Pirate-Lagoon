@@ -133,7 +133,8 @@
     box-sizing: border-box;
     font-family: 'Press Start 2P';
     text-align: center;
-    /* margin-top: 0rem;  */
+    margin-top: 0rem; 
+    z-index: 100;
 }
 
 h1 {
@@ -157,28 +158,22 @@ a:hover {
     opacity: 0.7;
 }
 
-body {
-    background-color: #0e61af;
-}
-
 .container {
-    position: absolute;
+    position: relative;
     left: 50%;
     transform: translate(-50%);
-    width: 600px;
-    height: 520px;
-    top: 10.5rem;
+    width: 700px;
+    height: 60px;
+    top: 11.5rem;
     /*background: rgba(10, 10, 10, 0.918);*/
     /*border: 1px solid rgb(4, 11, 107);*/
     padding: .5rem;
+    z-index: 1000;
 }
 
-
 .board{
-    position: relative;
 	width: 700px;
-    height: 600px;
-    z-index: -10000;
+	height: 600px;
 	background: #00658F;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -187,18 +182,12 @@ body {
 	-moz-box-shadow: 0px 10px 43px -16px rgba(0,0,0,0.75);
 	box-shadow: 0px 10px 43px -16px rgba(0,0,0,0.75);
 }
-.blueb{
-    z-index: -10000;
-    position: relative;
-}
+
 .game{
 	position: relative;
 	width: 700px;
-    margin: 100px auto 0;
-    z-index: 10000;
-    margin-top: 0rem;
-    margin-right: center;
-
+	margin: 120px auto 0;
+	top: -220px;
 }
 
 .your_color{
@@ -237,7 +226,7 @@ body {
 
 .board .overlay{
 	position: absolute;
-	z-index: 10000;
+	z-index: 100;
 	left: 0;
 	top: 0;
 	pointer-events: none;
@@ -249,7 +238,7 @@ body {
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	z-index: 100;
+	z-index: 10;
 }
 
 .cols > .col{
@@ -306,7 +295,7 @@ body {
 	right: 0;
 	bottom: 0;
 	background: rgba(0,0,0,.5);
-	z-index: 10000;
+	z-index: 1000;
 }
 
 .popover{
@@ -333,17 +322,13 @@ body {
 	font-size: 24px;
 	padding: 0;
 	margin: 0;
-    line-height: 1.5em;
-    z-index: 10000;
-
+	line-height: 1.5em;
 }
 
 .popover p{
 	margin: 0;
 	padding: 0;
-    line-height: 2em;
-    z-index: 10000;
-
+	line-height: 2em;
 }
 
 .popover input{
@@ -355,9 +340,7 @@ body {
 	box-sizing: border-box;
 	padding: 0 10px;
 	border: 1px solid #333;
-    outline: none;
-    z-index: 10000;
-
+	outline: none;
 }
 
 .status{
@@ -371,15 +354,10 @@ body {
 	background-color: #e64;
 	border-radius: 0 0 10px 10px;
 }
-.link{
-    z-index: 20000;
-    position: relative;
-
-}
 
 @media only screen and (max-device-width: 768px) {
 	.game {
 		margin: 120px 0;
 		zoom: 138% !important;
-    }
+	}
 }

@@ -16,9 +16,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+
+
 // session
 app.use(session({
-    secret:'youtube_video',
+    secret:'secret',
     resave: false,
     saveUninitialized: false,
     cookie: {
@@ -29,6 +31,8 @@ app.use(session({
 
 // Routers
 app.use('/', pageRouter);
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 // Errors => page not found 404
