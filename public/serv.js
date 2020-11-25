@@ -55,7 +55,7 @@ io.sockets.on('connection', function(socket){
 			socket.broadcast.to(data.room).emit('start');
 		}else{
 			console.log('player 1 is here');
-			if(socket.rooms.indexOf(data.room) <= 0) socket.join(data.room);
+			if((socket.rooms + "").indexOf(data.room) <= 0) socket.join(data.room);
 			socket.room = data.room;
 			socket.pid = 1;
 			socket.hash = generateHash(8);
