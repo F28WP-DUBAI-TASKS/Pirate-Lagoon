@@ -1,0 +1,51 @@
+doctype html
+head
+  link(href='https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap' rel='stylesheet')
+  script(src='https://code.jquery.com/jquery-latest.min.js' type='text/javascript')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+  script(src='index.js')
+  link(rel='stylesheet' type='text/css' href='style.css')
+  script(src='/socket.io/socket.io.js')
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+.bg
+  video#bgvid(playsinline='' autoplay='' muted='' loop='' poster='BG1.jpg')
+    source(src='gifbg.mp4' type='video/mp4')
+// >>>>>>>>>>>>>>>>>>>>>
+.titlepic
+  img(src='titlepic.png' alt='titlepic')
+.ship
+  img(src='ship.png' alt='ship')
+.shiprev
+  img(src='shiprev.png' alt='ship')
+div
+  a.popup_trigger
+    img#canongame1(src='canon.png')
+.bkgd
+  span.helper
+  div
+    .popupCloseButton &times;
+    h1 Connect Four
+    // >>>>>>>>>>>>>>>>Connect4 game>>>>>>>>>>>>>>>>>>>
+    h3.player-turn
+    .container
+      .game
+        .your_color
+        .opponent_color
+        .board
+          img.blueb(src='board.png')
+          .cols
+            #col_1.col(data-in-col='0')
+            #col_2.col(data-in-col='0')
+            #col_3.col(data-in-col='0')
+            #col_4.col(data-in-col='0')
+            #col_5.col(data-in-col='0')
+            #col_6.col(data-in-col='0')
+            #col_7.col(data-in-col='0')
+        .status Your turn!
+      .underlay.hidden
+      .popover.hidden
+        h2 Waiting for opponent
+        p Give the url to a friend to play a game
+        .link
+          input.share_url(type='text' value='')

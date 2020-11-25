@@ -1,7 +1,3 @@
- //k
-
-
-
 $(window).load(function () 
 {
     $(".popup_trigger").click(function(){

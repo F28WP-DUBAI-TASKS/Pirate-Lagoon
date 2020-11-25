@@ -1,11 +1,30 @@
 {
   "name": "WP-Coursework-",
   "version": "1.0.0",
-  "description": "WP GAME Battle TBD / Cannon Water/ Pirates/",
+  "description": "F28WP(2020) Coursework",
   "main": "app.js",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "bignumber.js": "^9.0.1",
+    "express": "^4.17.1",
+    "express-generator": "^4.16.1",
+    "express-session": "^1.17.1",
+    "favicon": "^0.0.2",
+    "mkdirp": "^1.0.4",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "pug": "^3.0.0",
+    "socket.io": "^3.0.3",
+    "sql-template-strings": "^2.2.2",
+    "sqlstring": "^2.3.2",
+    "util.promisify": "^1.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js"
+    "start": "nodemon app"
   },
   "repository": {
     "type": "git",
@@ -17,24 +36,5 @@
   "bugs": {
     "url": "https://github.com/F28WP-DUBAI-TASKS/WP-Coursework-/issues"
   },
-  "homepage": "https://github.com/F28WP-DUBAI-TASKS/WP-Coursework-#readme",
-  "dependencies": {
-    "bcrypt": "^5.0.0",
-    "body-parser": "^1.19.0",
-    "ejs": "^3.1.5",
-    "express": "^4.17.1",
-    "express-session": "^1.17.1",
-    "favicon": "0.0.2",
-    "morgan": "^1.10.0",
-    "mysql": "file:node_modules/mysql",
-    "mysql2": "^2.2.5",
-    "sequelize": "^6.3.5",
-    "sequelize-cli": "^6.2.0",
-    "socket.io": "^3.0.1",
-    "sql": "^0.78.0",
-    "sql-template-strings": "^2.2.2"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.6"
-  }
+  "homepage": "https://github.com/F28WP-DUBAI-TASKS/WP-Coursework-#readme"
 }

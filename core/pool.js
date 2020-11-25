@@ -1,14 +1,5 @@
 const util = require('util');
 const mysql = require('mysql');
-// var express = require('express');
-// var session = require('express-session');
-// var bodyParser = require('body-parser');
-// var path = require('path');
-// var server = require('http').createServer(app);
-// const pageRouter = require('./pages');
-// var io = require('socket.io')(server);
-// var app = express();
-
 /**
  * Connection to the database.
  *  */
@@ -17,7 +8,7 @@ const pool = mysql.createPool({
     host: 'localhost',
     user: 'root', // use your mysql username.
     password: 'kulsoom', // user your mysql password.
-    database: 'logindata'
+    database: 'www'
 });
 
 pool.getConnection((err, connection) => {

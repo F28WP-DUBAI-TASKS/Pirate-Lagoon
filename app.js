@@ -1,90 +1,52 @@
-
 const express = require('express');
-var session = require('express-session');
+const session = require('express-session');
+const path = require('path');
+const pageRouter = require('./routes/pages');
 const app = express();
 
-//const favicon = require('serve-favicon');
+// for body parser. to collect data that sent from the client.
+app.use(express.urlencoded( { extended : false}));
 
 
-
-const path = require('path');
-
-//use morgan middleware
-
-const morgan = require("morgan");
-
-app.use(morgan('dev'));
-
-//app.use(favicon(path.join(__dirname, 'views', 'favicon.ico')));
+// Serve static files. CSS, Images, JS files ... etc
+app.use(express.static(path.join(__dirname, 'public')));
 
 
+// Template engine. PUG
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
 
-const mygameRouter = require('./router/routes');
-app.use(mygameRouter);
-
-//define the route for static files that must be submitted to the client
-
-
-//if we get a GET with / we send index.html the main page of the game
-
-// app.get('/', (request, response) => {
-
-//     res.sendFile('public/index.html', { root: __dirname });
-
-// });
-
-//define a session to store username of logged-in user
-
+// session
 app.use(session({
-
-    secret: 'your secrete word goes here',
-
-    cookie: { maxAge: 60000 },
-
+    secret:'youtube_video',
     resave: false,
-
-    saveUninitialized: false
-
+    saveUninitialized: false,
+    cookie: {
+        maxAge: 60 * 1000 * 30
+    }
 }));
 
-//define the route for static files that must be submitted to the client
 
-app.use(express.static('public'));
+// Routers
+app.use('/', pageRouter);
 
-//if we get a GET with / we send index.html the main page of the game
 
-app.get('/', (request, response) => {
-console.log('slash route');
-    response.sendFile('public/login.html', { root: __dirname });
+// Errors => page not found 404
+app.use((req, res, next) =>  {
+    var err = new Error('Page not found');
+    err.status = 404;
+    next(err);
+})
 
+// Handling errors (send them to the client)
+app.use((err, req, res, next) => {
+    res.status(err.status || 500);
+    res.send(err.message);
 });
 
- 
-
-// define middleware to process JSON and URL
-
-app.use(express.json());
-
-app.use(express.urlencoded());
-
-//create the database in case this is the first time we run the game
-
-//This assumes you have a module called newdb.js that exports the method created()
-
-//const createDB = require('./Databases/db');
-
-//createDB();
-// const db = require('db');
-
-
-//make the app listen on port
-
-const port = process.argv[2] || process.env.PORT || 3000;
-
-// const server =
- const server = app.listen(3000, () =>  {
-
-    console.log(`My server is running and listening at http://localhost:${port}`);
-
+// Setting up the server
+app.listen(3000, () => {
+    console.log('Server is running on port 3000...');
 });
-var io = require('socket.io')(server);
+
+module.exports = app;
