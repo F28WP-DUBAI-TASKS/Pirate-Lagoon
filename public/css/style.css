@@ -37,26 +37,6 @@
     margin-top: 205px;
 }
 
-.Namebutton {
-    position: absolute;
-    display: inline-block;
-    width: 65%;
-    margin-top: 35%;
-    text-align: right;
-}
-
-#b1 {
-    background: #0066A2;
-    color: white;
-    border-style: outset;
-    border-color: #0066A2;
-    height: 45%;
-    width: 4.5%;
-    right: 40%;
-    transform: translateX(1800%);
-    font: bold 15px arial, sans-serif;
-    text-shadow: none;
-}
 
 .bkgd {
     cursor: pointer;
@@ -66,15 +46,15 @@
     text-align: center;
     top: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 100;
 }
 
 
-/* .bkgd .helper{
+.bkgd .helper{
   display:inline-block;
   height:100%;
   vertical-align:middle;
-}  */
+} 
 
 .bkgd>div {
     background-color: #fff;
@@ -111,18 +91,21 @@
 }
 
 .popup_trigger {
-    cursor: pointer;
-    height: 40px;
-    width: 40px;
+	cursor: pointer;
+	height: 40;
+	width: 40;
+    margin-top: 310px;
+    margin-left: -200px;
     margin: 20px;
     font-weight: bold;
-    position: fixed;
+	position: fixed;
+	
 }
 
 #canongame1 {
     position: fixed;
     z-index: 1100;
-    margin-top: 310px;
+    margin-top: 330px;
     margin-left: -200px;
 }
 
@@ -134,19 +117,16 @@
     font-family: 'Press Start 2P';
     text-align: center;
     margin-top: 0rem; 
-    z-index: 100;
+ 
 }
 
 h1 {
     font-size: 40px;
 }
 
-h3 {
-    font-size: 15px;
-}
 
 a {
-    position: absolute;
+    position: relative;
     top: 6rem;
     font-size: 2rem;
     left: 50%;
@@ -168,7 +148,7 @@ a:hover {
     /*background: rgba(10, 10, 10, 0.918);*/
     /*border: 1px solid rgb(4, 11, 107);*/
     padding: .5rem;
-    z-index: 1000;
+    z-index: 100;
 }
 
 .board{
@@ -187,7 +167,6 @@ a:hover {
 	position: relative;
 	width: 700px;
 	margin: 120px auto 0;
-	top: -220px;
 }
 
 .your_color{
@@ -226,9 +205,9 @@ a:hover {
 
 .board .overlay{
 	position: absolute;
-	z-index: 100;
-	left: 0;
-	top: 0;
+	z-index: 1000;
+	left: 7px;
+	top: 7px;
 	pointer-events: none;
 	-webkit-filter: drop-shadow( 5px 5px 5px rgba(0,0,0,0.1));
 	filter: drop-shadow( 5px 5px 5px rgba(0,0,0,0.1));
@@ -238,7 +217,7 @@ a:hover {
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	z-index: 10;
+	z-index: 100;
 }
 
 .cols > .col{
@@ -247,6 +226,7 @@ a:hover {
 	width: 100px;
 	height: 100%;
 }
+
 
 @-moz-keyframes blink {0%{opacity:1;} 50%{opacity:.5;} 100%{opacity:1;}}
 @-webkit-keyframes blink {0%{opacity:1;} 50%{opacity:.5;} 100%{opacity:1;}}
@@ -293,9 +273,10 @@ a:hover {
 	left: 0;
 	top: 0;
 	right: 0;
+	margin-top: 30ch;
 	bottom: 0;
 	background: rgba(0,0,0,.5);
-	z-index: 1000;
+	z-index: 10000;
 }
 
 .popover{
@@ -303,10 +284,11 @@ a:hover {
 	top: 50%;
 	left: 50%;
 	margin-left: -200px;
-	margin-top: -150px;
+	top: 0;
+	margin-top: 30ch;
 	box-sizing: border-box;
 	padding: 10px;
-	height: 130px;
+	height: 140px;
 	width: 400px;
 	background: #f2f2f2;
 	z-index: 10000;
@@ -333,9 +315,10 @@ a:hover {
 
 .popover input{
 	position: absolute;
-	bottom: 10px;
-	width: 380px;
+	bottom: -3rem;
+	width: 480px;
 	line-height: 2em;
+	margin-left: -15rem;
 	font-size: 16px;
 	box-sizing: border-box;
 	padding: 0 10px;
@@ -345,7 +328,7 @@ a:hover {
 
 .status{
 	position: absolute;
-	bottom: -40px;
+	/* bottom: 0px; */
 	width: 100%;
 	text-align: center;
 	line-height: 40px;

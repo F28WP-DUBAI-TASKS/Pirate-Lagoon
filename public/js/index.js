@@ -1,4 +1,4 @@
-$(window).load(function () 
+$(window).one("load", function () 
 {
     $(".popup_trigger").click(function(){
        $('.bkgd').show();

@@ -1,21 +1,55 @@
 "use strict";
 
 var express = require('express'),
-    game_logic = require('./game_logic'),
+    game_logic = require('./public/game_logic'),
+    session = require('express-session'),
+    pageRouter = require('./routes/pages'),
     app = express(),
     http = require('http'),
     server = http.createServer(app),
-    port = Number(process.env.PORT || 3000),
-    io = require('socket.io')(server),
-    path = require('path');
+    // port = Number(process.env.PORT || 3000),
+io = require('socket.io')(server),
+    path = require('path'); // server.listen(port);
 
-server.listen(port);
 /*routing*/
 
-app.use(express["static"]('./public')); // app.use(express.static(__dirname + '/style.css'));
+
+app.use(express["static"]('public')); // app.use(express.static(__dirname + '/style.css'));
 // app.use( express.static(__dirname + '/index.js'));
 // app.use("/", express.static(__dirname + '/img'));
+// for body parser. to collect data that sent from the client.
 
+app.use(express.urlencoded({
+  extended: false
+})); // Serve static files. CSS, Images, JS files ... etc
+
+app.use(express["static"](path.join(__dirname, 'public'))); // Template engine. PUG
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug'); // session
+
+app.use(session({
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 60 * 1000 * 30
+  }
+})); // Routers
+
+app.use('/', pageRouter);
+app.use(express["static"](path.join(__dirname, 'public'))); // Errors => page not found 404
+
+app.use(function (req, res, next) {
+  var err = new Error('Page not found');
+  err.status = 404;
+  next(err);
+}); // Handling errors (send them to the client)
+
+app.use(function (err, req, res, next) {
+  res.status(err.status || 500);
+  res.send(err.message);
+});
 app.get('/', function (req, res) {
   res.writeHead(302, {
     'Location': '/' + generateHash(6)
@@ -23,7 +57,7 @@ app.get('/', function (req, res) {
   res.end();
 });
 app.get('/:room([A-Za-z0-9]{6})', function (req, res) {
-  res.sendFile(__dirname + '/game.html');
+  res.sendFile(__dirname + '/public/game.html');
 });
 
 function generateHash(length) {
@@ -121,3 +155,7 @@ io.sockets.on('connection', function (socket) {
     });
   });
 });
+app.listen(3000, function () {
+  console.log('Server is running on port 3000...');
+});
+module.exports = app;
