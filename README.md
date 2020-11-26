@@ -17,7 +17,7 @@ Areesha Arain, Kulsoom Khan, Sai Shriya Surla, Sukaina Mawji, Syed Taqi
 # INSTRUCTIONS
             Step 1: 2 Players enter the game and register unique identifying names for their characters.
             Step 2: The Players will compete the connect 4 game.
-            Step 4: The winner of the game is decided.
+            Step 3: The winner of the game is decided.
             'The Champion of The Lands Uninhabited'.
 # Javascript:
   - index.js :
