@@ -5,7 +5,7 @@ var express = require('express'),
 	app = express(),
 	http = require('http'),
 	server = http.createServer(app),
-	// port = Number(process.env.PORT || 3000),
+	port = process.env.port||3000,
 	io = require('socket.io')(server),
 	path = require('path');
 
