@@ -12,12 +12,7 @@ var express = require('express'),
 server.listen(port);
 
 /*routing*/
-app.use(express.static('public')); 
-
-
-
-
-
+app.use(express.static('public'));
 
  app.get('/', function(req, res){
  	res.writeHead(302, {
