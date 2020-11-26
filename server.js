@@ -9,7 +9,7 @@ var express = require('express'),
 	io = require('socket.io')(server);
 	// path = require('path');
 
-server.listen(port);
+server.listen();
 
 /*routing*/
 app.use(express.static('public'));
