@@ -14,6 +14,11 @@ server.listen(port);
 /*routing*/
 app.use(express.static('public')); 
 
+
+
+
+
+
  app.get('/', function(req, res){
  	res.writeHead(302, {
  		'Location': '/'+generateHash(6)

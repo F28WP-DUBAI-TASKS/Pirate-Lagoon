@@ -20,7 +20,7 @@
 //     }
 // }));
 // // Routers
-// app.use('/', pageRouter);
+// app.use('/', pageRouter); 
 // app.use(express.static(path.join(__dirname, 'public')));
 // // Errors => page not found 404
 // app.use((req, res, next) =>  {
