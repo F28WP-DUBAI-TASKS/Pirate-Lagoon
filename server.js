@@ -1,15 +1,12 @@
 var express = require('express'),
 	game_logic = require('./public/game_logic'),
-	// session = require('express-session'),
-	//  pageRouter = require('./routes/pages'),
 	app = express(),
 	http = require('http'),
 	server = http.createServer(app),
-	port = process.env.port||3000,
 	io = require('socket.io')(server);
 	// path = require('path');
 
-server.listen();
+server.listen(3000);
 
 /*routing*/
 app.use(express.static('public'));
