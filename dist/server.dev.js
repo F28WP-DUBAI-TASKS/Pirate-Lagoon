@@ -9,47 +9,12 @@ var express = require('express'),
     server = http.createServer(app),
     port = process.env.port || 3000,
     io = require('socket.io')(server),
-    path = require('path'); // server.listen(port);
+    path = require('path');
 
+server.listen(port);
 /*routing*/
 
-
-app.use(express["static"]('public')); // app.use(express.static(__dirname + '/style.css'));
-// app.use( express.static(__dirname + '/index.js'));
-// app.use("/", express.static(__dirname + '/img'));
-// for body parser. to collect data that sent from the client.
-
-app.use(express.urlencoded({
-  extended: false
-})); // Serve static files. CSS, Images, JS files ... etc
-
-app.use(express["static"](path.join(__dirname, 'public'))); // Template engine. PUG
-
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug'); // session
-
-app.use(session({
-  secret: 'secret',
-  resave: false,
-  saveUninitialized: false,
-  cookie: {
-    maxAge: 60 * 1000 * 30
-  }
-})); // Routers
-
-app.use('/', pageRouter);
-app.use(express["static"](path.join(__dirname, 'public'))); // Errors => page not found 404
-
-app.use(function (req, res, next) {
-  var err = new Error('Page not found');
-  err.status = 404;
-  next(err);
-}); // Handling errors (send them to the client)
-
-app.use(function (err, req, res, next) {
-  res.status(err.status || 500);
-  res.send(err.message);
-});
+app.use(express["static"]('public'));
 app.get('/', function (req, res) {
   res.writeHead(302, {
     'Location': '/' + generateHash(6)
@@ -155,7 +120,3 @@ io.sockets.on('connection', function (socket) {
     });
   });
 });
-app.listen(3000, function () {
-  console.log('Server is running on port 3000...');
-});
-module.exports = app;
