@@ -1,32 +1,32 @@
 const express = require('express');
-const User = require('../core/user');
+// const User = require('../core/user');
 const router = express.Router();
 
 // create an object from the class User in the file core/user.js
-const user = new User();
+//const user = new User();
 
 // Get the index page
-router.get('/', (req, res, next) => {
-    let user = req.session.user;
-    // If there is a session named user that means the use is logged in. so we redirect him to home page by using /home route below
-    if(user) {
-        res.redirect('/home');
-        return;
-    }
-    // IF not we just send the index page.
-    res.render('index', {title:"My application"});
-})
+// router.get('/', (req, res, next) => {
+//     let user = req.session.user;
+//     // If there is a session named user that means the use is logged in. so we redirect him to home page by using /home route below
+//     if(user) {
+//         res.redirect('/home');
+//         return;
+//     }
+//     // IF not we just send the index page.
+//     res.render('index', {title:"My application"});
+// })
 
 // Get home page
-router.get('/home', (req, res, next) => {
-    let user = req.session.user;
+// router.get('/home', (req, res, next) => {
+//     let user = req.session.user;
 
-    if(user) {
-        res.render('home', {opp:req.session.opp, name:user.fullname});
-        return;
-    }
-    res.redirect('/');
-});
+//     if(user) {
+//         res.render('home', {opp:req.session.opp, name:user.fullname});
+//         return;
+//     }
+//     res.redirect('/');
+// });
 
 // Post login data
 router.post('/login', (req, res, next) => {
