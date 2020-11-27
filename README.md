@@ -11,7 +11,7 @@ The Pirates are trying to conquer lost lands and hidden treasures. But Alas! The
 Areesha Arain, Kulsoom Khan, Sai Shriya Surla, Sukaina Mawji, Syed Taqi
 
 # AIM OF THE GAME 
- Players should defend their territories and attempt to bring down the enemy forces by attacking their ships. The only way to win is to destroy your enemy at our mini game, Coonect4. 
+ Players should defend their territories and attempt to bring down the enemy forces by attacking their ships. The only way to win is to destroy your enemy at our mini game, Connect4. A twist to the classic logical game, Welcome to Pirate Lagoon!
 
 
 
