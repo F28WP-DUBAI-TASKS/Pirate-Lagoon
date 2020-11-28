@@ -7,6 +7,15 @@ YouTube link for our trailer: https://www.youtube.com/watch?v=mzmJLJQw-Tc
 
 The Pirates are trying to conquer lost lands and hidden treasures. But Alas! The Seas are not big enough for more than one Pirate Ship. The only way to decide the 'The Champion of The Lands Uninhabited', is to battle it out in the daunting waters till your dying breaths. The Last One standing is the ultimate winner.
 
+# Installation
+
+Download the zip folder of the game on your pc.
+- CD into the game directory
+- Run ```npm install```
+- Run ```npm start```
+- Open localhost:3000 on your browser
+
+
 # GROUP MEMBERS
 Areesha Arain, Kulsoom Khan, Sai Shriya Surla, Sukaina Mawji, Syed Taqi
 
